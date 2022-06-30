@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#363636">
+
+    <ScrollView
+        android:id="@+id/transactionbodyID"
+        android:layout_above="@+id/tienbarlayoutID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/sanphamtitleID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/san_pham_title"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cartedProductRecyclerViewID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sanphamtitleID"
+                tools:listitem="@layout/sanpham_carted_fragment"
+                android:nestedScrollingEnabled="false" />
+
+            <LinearLayout
+                android:id="@+id/buttonCombineID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cartedProductRecyclerViewID"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#B03737"
+                    android:fontFamily="@font/roboto"
+                    android:padding="12dp"
+                    android:text="@string/xoa_gio_hang"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F4CD2A"
+                    android:fontFamily="@font/roboto"
+                    android:padding="12dp"
+                    android:text="@string/them_san_pham"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/DeliveryInformationID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/buttonCombineID"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/thong_tin_giao_hang"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/HoVaTenID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DeliveryInformationID"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/ho_va_ten"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/HoVaTenEditID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/HoVaTenID"
+                android:layout_marginTop="8dp"
+                android:background="#585858"
+                android:fontFamily="@font/roboto"
+                android:inputType="text|textNoSuggestions"
+                android:padding="12dp"
+                android:text="@string/sample_name_edit"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/SoDientThoaiID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/HoVaTenEditID"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/so_dien_thoai"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/SoDienThoaiEditID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SoDientThoaiID"
+                android:layout_marginTop="8dp"
+                android:background="#585858"
+                android:fontFamily="@font/roboto"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:text="@string/_0869315924"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/DiaChiGiaoHangID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SoDienThoaiEditID"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/dia_chi_giao_hang"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/DiaChiEditID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DiaChiGiaoHangID"
+                android:layout_marginTop="8dp"
+                android:background="#585858"
+                android:fontFamily="@font/roboto"
+                android:inputType="textMultiLine"
+                android:padding="12dp"
+                android:text="@string/address_sample"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/tienbarlayoutID"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="#585858"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/tientextviewcombinationID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tongtientextviewID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/playfair_display"
+                android:text="@string/tong_tien"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/SoTienTextViewID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="80.000"
+                android:textColor="#F4CD2A"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/datHangBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="#F4CD2A"
+            android:fontFamily="@font/roboto"
+            android:padding="16dp"
+            android:text="@string/dat_hang"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textAllCaps="false"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Gourmet</string>
+    <string name="tim_kiem">Tim Kiem</string>
+    <string name="title">Ca chua da lat</string>
+    <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna gilla urna, porttitor rhoncus dolor purus non enim aesent entum facilisis leo, vel</string>
+    <string name="RecipeQuestion">Ban Muon An Gi Hom Nay?</string>
+    <string name="san_pham_title">SAN PHAM</string>
+    <string name="sample_name_edit">Nguyen Van A</string>
+    <string name="thong_tin_giao_hang">THONG TIN GIAO HANG</string>
+    <string name="ho_va_ten">Ho va ten</string>
+    <string name="them_san_pham">Them San Pham</string>
+    <string name="xoa_gio_hang">Xoa Gio Hang</string>
+    <string name="dia_chi_giao_hang">Dia Chi Giao Hang</string>
+    <string name="so_dien_thoai">So Dien Thoai</string>
+    <string name="_0869315924">0869315924</string>
+    <string name="address_sample">123/456A Nguyễn Thị Minh Khai, phường 2, quận 13</string>
+    <string name="tong_tien">Tong Tien</string>
+    <string name="dat_hang">Dat Hang</string>
 </resources>
