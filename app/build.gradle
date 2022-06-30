@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -29,6 +30,7 @@ android {
 
 dependencies {
     implementation "android.arch.persistence.room:runtime:1.1.1"
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
     androidTestImplementation "android.arch.persistence.room:testing:1.1.1"
 
