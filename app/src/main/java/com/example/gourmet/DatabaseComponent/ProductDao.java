@@ -1,13 +1,14 @@
-package com.example.gourmet;
+package com.example.gourmet.DatabaseComponent;
 
 import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
 import androidx.lifecycle.LiveData;
+
+import com.example.gourmet.DataElement.ProductElement;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.gourmet;
+package com.example.gourmet.DataElement;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

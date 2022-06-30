@@ -1,4 +1,4 @@
-package com.example.gourmet;
+package com.example.gourmet.ViewModel;
 
 import android.app.Application;
 
@@ -7,6 +7,9 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
+
+import com.example.gourmet.DataElement.ProductElement;
+import com.example.gourmet.DatabaseComponent.Repository;
 
 public class ProductViewModel extends AndroidViewModel {
     private final Repository repository;

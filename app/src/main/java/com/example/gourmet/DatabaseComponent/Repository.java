@@ -1,8 +1,13 @@
-package com.example.gourmet;
+package com.example.gourmet.DatabaseComponent;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
+
+import com.example.gourmet.DataElement.ProductElement;
+import com.example.gourmet.DataElement.StoreElement;
+import com.example.gourmet.DataElement.TransactionDetailElement;
+import com.example.gourmet.DataElement.TransactionElement;
 
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -16,7 +21,7 @@ public class Repository {
     private final StoreDao storeDao;
     private final TransactionDao transactionDao;
     private final TransactionDetailDao transactionDetailDao;
-    Repository(Application application){
+    public Repository(Application application){
         RoomDatabase roomDatabase = RoomDatabase.getInstance(application);
         productDao = roomDatabase.productDao();
         storeDao = roomDatabase.storeDao();
