@@ -31,6 +31,7 @@
         android:textColor="#AEAEAE" />
     <fragment
         android:id="@+id/navigationbarID_recipelistfrag"
+        android:name="com.example.gourmet.Activity_Fragment.NavFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

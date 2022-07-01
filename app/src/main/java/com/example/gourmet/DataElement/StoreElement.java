@@ -1,10 +1,11 @@
 package com.example.gourmet.DataElement;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
+
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "StoreTable")
 public class StoreElement {
@@ -18,15 +19,38 @@ public class StoreElement {
     @NonNull
     @ColumnInfo(name = "MapCode")
     String MapCode;
-    StoreElement(int StoreID, String Address, String Mapcode){
+
+    public StoreElement(){
+        StoreID = -1;
+        Address = "Undefined";
+        MapCode = "Undefined";
+    }
+    public StoreElement(int StoreID, String Address, String Mapcode){
         this.StoreID = StoreID;
         this.Address = Address;
         this.MapCode = Mapcode;
     }
-    String getAddress(){
+
+    public int getStoreID() {
+        return StoreID;
+    }
+
+    public String getAddress(){
         return Address;
     }
-    String getMapCode(){
+    public String getMapCode(){
         return MapCode;
+    }
+
+    public void setStoreID(int storeID) {
+        StoreID = storeID;
+    }
+
+    public void setAddress(@NonNull String address) {
+        Address = address;
+    }
+
+    public void setMapCode(@NonNull String mapCode) {
+        MapCode = mapCode;
     }
 }

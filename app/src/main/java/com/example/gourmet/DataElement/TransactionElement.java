@@ -1,12 +1,12 @@
 package com.example.gourmet.DataElement;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.PrimaryKey;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Transaction_table",foreignKeys = {@ForeignKey(entity = StoreElement.class,parentColumns = "StoreID",childColumns = "StoreID",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
 public class TransactionElement {
@@ -17,17 +17,20 @@ public class TransactionElement {
     @NonNull
     @ColumnInfo(name = "TransactionDate")
     String TransDate;
-    @Nullable
-    @ColumnInfo(name = "TransactionID")
-    int TransDetailID;
     @NonNull
     @ColumnInfo(name = "StoreID")
     int StoreID;
 
-    public TransactionElement(int ID, @NonNull String transDate, int transDetailID, int storeID) {
+    public TransactionElement(){
+        ID = -1;
+         TransDate = "Undefined";
+        StoreID  =  -1;
+
+    }
+
+    public TransactionElement(int ID, @NonNull String transDate,  int storeID) {
         this.ID = ID;
         TransDate = transDate;
-        TransDetailID = transDetailID;
         StoreID = storeID;
     }
 
@@ -40,11 +43,20 @@ public class TransactionElement {
         return TransDate;
     }
 
-    public int getTransDetailID() {
-        return TransDetailID;
-    }
 
     public int getStoreID() {
         return StoreID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setTransDate(@NonNull String transDate) {
+        TransDate = transDate;
+    }
+
+    public void setStoreID(int storeID) {
+        StoreID = storeID;
     }
 }

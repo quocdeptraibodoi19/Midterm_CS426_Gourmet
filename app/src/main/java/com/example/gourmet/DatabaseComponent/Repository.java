@@ -30,7 +30,7 @@ public class Repository {
     }
     // ProductDAO
     public LiveData<List<ProductElement>> getProductList(){
-        return productDao.GetListProductElement();
+        return productDao.getListProductElement();
     }
     public void InsertProduct(ProductElement productElement){
         ExecutorService service = Executors.newSingleThreadExecutor();
@@ -78,7 +78,7 @@ public class Repository {
         service.shutdown();
     }
 
-    // TransactionDAO
+//    // TransactionDAO
     public LiveData<List<TransactionElement>> GetTransactionList(){
         return transactionDao.GetTransactionElementList();
     }

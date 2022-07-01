@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/categoryViewID"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="16dp"
+    android:layout_height="wrap_content">
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/catte_buttonID"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        android:padding="14dp"
+        android:backgroundTint="#1A000000"
+        android:text="@string/title"
+        android:fontFamily="@font/playfair_display"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textColor="#FCFCFC"
+        android:letterSpacing="0.1"
+        android:textSize="20sp"/>
+    <ImageView
+        android:id="@+id/overlayID"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:alpha="0.65"
+        android:foreground="#000000"
+        android:src="@drawable/raucubackground"
+        android:scaleType="centerCrop"/>
+</androidx.cardview.widget.CardView>
