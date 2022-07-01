@@ -11,7 +11,7 @@ import com.example.gourmet.DataElement.StoreElement;
 import com.example.gourmet.DataElement.TransactionDetailElement;
 import com.example.gourmet.DataElement.TransactionElement;
 
-@Database(entities = {ProductElement.class, StoreElement.class, TransactionElement.class, TransactionDetailElement.class},version = 2,exportSchema = false)
+@Database(entities = {ProductElement.class, StoreElement.class, TransactionElement.class, TransactionDetailElement.class},version = 3,exportSchema = false)
 public abstract class RoomDatabase extends androidx.room.RoomDatabase {
     public abstract ProductDao productDao();
     public abstract StoreDao storeDao();

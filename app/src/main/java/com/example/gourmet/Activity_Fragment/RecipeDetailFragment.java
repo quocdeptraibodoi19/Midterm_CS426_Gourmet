@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.gourmet.R;
 
@@ -16,6 +17,33 @@ public class RecipeDetailFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.recipe_detail_fragment,container,false);
+        View fragment = rootView.findViewById(R.id.navigationbarID_recipedetailfrag);
+        fragment.findViewById(R.id.homeIconId).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(RecipeDetailFragment.this).navigate(R.id.action_recipeDetailFragment_to_homeFragment);
+            }
+        });
+        fragment.findViewById(R.id.shopIconId).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(RecipeDetailFragment.this).navigate(R.id.action_recipeDetailFragment_to_mapsFragment);
+            }
+        });
+        fragment.findViewById(R.id.recipeIconId).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(RecipeDetailFragment.this).navigate(R.id.action_recipeDetailFragment_to_recipeListFragment);
+
+            }
+        });
+        fragment.findViewById(R.id.transactionIconId).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(RecipeDetailFragment.this).navigate(R.id.action_recipeDetailFragment_to_transactionHistoryFragment);
+
+            }
+        });
         return rootView;
     }
 }

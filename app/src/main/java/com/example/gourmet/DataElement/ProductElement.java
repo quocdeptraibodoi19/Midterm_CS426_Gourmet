@@ -22,24 +22,34 @@ public class ProductElement {
     String ImageUrl;
     @NonNull
     @ColumnInfo(name = "Price")
-    String Price; // Price has the format "x.0000/ygr"
+    float Price;
     @Nullable
     @ColumnInfo(name = "ProductDescription")
     String ProductDescription;
+    @NonNull
+    @ColumnInfo(name = "Category")
+    String category;
+    @NonNull
+    @ColumnInfo(name = "DataUnit")
+    String DataUnit;
 
     public ProductElement(){
         ProductID = -1;
         NameProduct = "Undefined";
         ImageUrl = "Undefined";
-        Price = "Undefined";
+        Price = -1;
         ProductDescription = "Undefined";
+        category = "Undefined";
+        DataUnit = "undefined";
     }
-    public ProductElement(int ProductId, String NameProduct, String ImageUrl, String Price, String ProductDescription){
+    public ProductElement(int ProductId, String NameProduct, String ImageUrl, float Price, String ProductDescription,String Category,String DataUnit){
         this.ProductID = ProductId;
         this.NameProduct = NameProduct;
         this.ImageUrl = ImageUrl;
         this.Price = Price;
         this.ProductDescription = ProductDescription;
+        this.category = Category;
+        this.DataUnit = DataUnit;
     }
 
     public void setProductID(int productID) {
@@ -54,12 +64,21 @@ public class ProductElement {
         ImageUrl = imageUrl;
     }
 
-    public void setPrice(@NonNull String price) {
+    public void setPrice(@NonNull float price) {
         Price = price;
     }
 
     public void setProductDescription(@Nullable String productDescription) {
         ProductDescription = productDescription;
+    }
+
+    public void setCategory(@NonNull String category) {
+        this.category = category;
+    }
+
+    @NonNull
+    public String getDataUnit() {
+        return DataUnit;
     }
 
     public int getProductID() {
@@ -77,12 +96,21 @@ public class ProductElement {
     }
 
     @NonNull
-    public String getPrice() {
+    public float getPrice() {
         return Price;
     }
 
     @Nullable
     public String getProductDescription() {
         return ProductDescription;
+    }
+
+    @NonNull
+    public String getCategory() {
+        return category;
+    }
+
+    public void setDataUnit(@NonNull String dataUnit) {
+        DataUnit = dataUnit;
     }
 }
