@@ -28,7 +28,7 @@ public class ProductElement {
     String ProductDescription;
     @NonNull
     @ColumnInfo(name = "Category")
-    String category;
+    String Category;
     @NonNull
     @ColumnInfo(name = "DataUnit")
     String DataUnit;
@@ -39,7 +39,7 @@ public class ProductElement {
         ImageUrl = "Undefined";
         Price = -1;
         ProductDescription = "Undefined";
-        category = "Undefined";
+        Category = "Undefined";
         DataUnit = "undefined";
     }
     public ProductElement(int ProductId, String NameProduct, String ImageUrl, float Price, String ProductDescription,String Category,String DataUnit){
@@ -48,7 +48,7 @@ public class ProductElement {
         this.ImageUrl = ImageUrl;
         this.Price = Price;
         this.ProductDescription = ProductDescription;
-        this.category = Category;
+        this.Category = Category;
         this.DataUnit = DataUnit;
     }
 
@@ -73,7 +73,7 @@ public class ProductElement {
     }
 
     public void setCategory(@NonNull String category) {
-        this.category = category;
+        this.Category = category;
     }
 
     @NonNull
@@ -107,7 +107,7 @@ public class ProductElement {
 
     @NonNull
     public String getCategory() {
-        return category;
+        return Category;
     }
 
     public void setDataUnit(@NonNull String dataUnit) {
