@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/categoryViewID"
     android:layout_width="match_parent"
-    android:layout_marginBottom="16dp"
+    android:layout_marginBottom="24dp"
     android:layout_height="wrap_content">
     <com.google.android.material.button.MaterialButton
         android:id="@+id/catte_buttonID"
@@ -22,7 +22,7 @@
         android:id="@+id/overlayID"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:alpha="0.65"
+        android:alpha="0.75"
         android:foreground="#000000"
         android:src="@drawable/raucubackground"
         android:scaleType="centerCrop"/>
