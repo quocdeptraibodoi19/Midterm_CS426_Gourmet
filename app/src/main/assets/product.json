@@ -1,0 +1,163 @@
+[{
+    ProductID:1,
+    NameProduct: "Cà chua Đà Lạt",
+    ImageUrl: "https://bizweb.dktcdn.net/100/021/951/products/tomatoes1-550x.jpg?v=1626769632373",
+    Price:25000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel. Aspernatur, omnis.",
+    Category:"vegetable",
+    DataUnit:"500gr"
+},
+{
+    ProductID:2,
+    NameProduct: "Xà lách hữu cơ",
+    ImageUrl: "http://product.hstatic.net/1000282430/product/iceberg_494a5f738ee14e3587b7c835c7f76a4d_grande.jpg",
+    Price:30000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos.",
+    Category:"vegetable",
+    DataUnit:"500gr"
+},
+{
+    ProductID:3,
+    NameProduct: "Rau tần ô Đà Lạt",
+    ImageUrl: "https://dalatxanh.vn/wp-content/uploads/2019/10/tan-o.jpg",
+    Price:35000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel. Aspernatur, omnis.",
+    Category:"vegetable",
+    DataUnit:"500gr"
+},
+{
+    ProductID:4,
+    NameProduct: "Ớt chuông Baby Đà Lạt",
+    ImageUrl: "https://www.transoceanmart.com/wp-content/uploads/2020/08/%E1%BB%9Bt-chu%C3%B4ng-baby-%C4%91%C3%A0-l%E1%BA%A1t-1.jpg",
+    Price:90000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"vegetable",
+    DataUnit:"500gr"
+},
+{
+    ProductID:5,
+    NameProduct: "Súp Lơ New Zealand",
+    ImageUrl: "https://minhcaumart.vn/media/com_eshop/products/2900450.jpg",
+    Price:65000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"vegetable",
+    DataUnit:"500gr"
+},
+{
+    ProductID:6,
+    NameProduct: "Cải bó xôi hữu cơ",
+    ImageUrl: "https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2021/10/8/image-500x500-16336805084271469691744.jpg",
+    Price:45000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"vegetable",
+    DataUnit:"500gr"
+},
+{
+    ProductID:7,
+    NameProduct: "Chuối già Nam Mỹ",
+    ImageUrl: "https://everydayorganic.com.vn/data/news/3910/134.2.jpg",
+    Price:65000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"fruit",
+    DataUnit:"kg"
+},
+{
+    ProductID:8,
+    NameProduct: "Kiwi New Zealand",
+    ImageUrl: "https://img.websosanh.vn/v2/users/root_product/images/kiwi-xanh-new-zealand/hZO_NsjZxu0c.jpg?compress=85",
+    Price:250000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"fruit",
+    DataUnit:"kg"
+},
+{
+    ProductID:9,
+    NameProduct: "Bưởi năm roi",
+    ImageUrl: "https://salt.tikicdn.com/cache/525x525/ts/product/a6/fe/b2/22161988744ce70ad1256489665c8d19.jpg",
+    Price:130000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"fruit",
+    DataUnit:"kg"
+},
+{
+    ProductID:10,
+    NameProduct: "Nho không hạt Mỹ",
+    ImageUrl: "https://bizweb.dktcdn.net/100/408/806/products/17.jpg?v=1606982734920",
+    Price:235000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"fruit",
+    DataUnit:"kg"
+},
+{
+    ProductID:11,
+    NameProduct: "Cam vàng Mỹ",
+    ImageUrl: "https://media.loveitopcdn.com/1254/cam-vang-my-moi-2.jpg",
+    Price:105000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"fruit",
+    DataUnit:"kg"
+},
+{
+    ProductID:12,
+    NameProduct: "Lựu đỏ Peru",
+    ImageUrl: "http://bizweb.dktcdn.net/thumb/grande/100/361/770/products/94381856-238914210685758-8739762748004499456-n.jpg?v=1587715304513",
+    Price:150000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"fruit",
+    DataUnit:"kg"
+},
+{
+    ProductID:13,
+    NameProduct: "Thịt bò A5",
+    ImageUrl: "https://bizweb.dktcdn.net/thumb/1024x1024/100/382/166/products/thit-bo-dong-lanh-khong-xuong-than-ngoai-sirlin-a5-kagoshima.jpg?v=1631759873187",
+    Price:275000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"meat",
+    DataUnit:"kg"
+},
+{
+    ProductID:14,
+    NameProduct: "Thịt cừu non",
+    ImageUrl: "https://image.voso.vn/users/vosoimage/images/8cd5ea93badd67c2a3ee9d4c72010495?t%5B0%5D=compress%3Alevel%3D100&accessToken=7c32702959b77f440f8375e209cb794fb232a8122d86bd64cb3e1684deca8806",
+    Price:225000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"meat",
+    DataUnit:"kg"
+},
+{
+    ProductID:15,
+    NameProduct: "Cua Hoàng Đế Alaska",
+    ImageUrl: "https://haisanphuongnam.com/asset/upload/image/cua-hoang-de-oceanking-asia-1-square1.jpg?v=20190410",
+    Price:300000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"meat",
+    DataUnit:"kg"
+},
+{
+    ProductID:16,
+    NameProduct: "Cá hồi hữu cơ",
+    ImageUrl: "https://product.hstatic.net/200000423303/product/ca_hoi_huu_co_phi_le_vikenco_30d3b3fc29bc48baa07fd5be6923ca72_1024x1024.jpg",
+    Price:350000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"meat",
+    DataUnit:"kg"
+},
+{
+    ProductID:17,
+    NameProduct: "Trứng gà hữu cơ",
+    ImageUrl: "http://hn.check.net.vn/data/product/mainimages/original/product2012.jpg",
+    Price:60000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"meat",
+    DataUnit:"dozen"
+},
+{
+    ProductID:18,
+    NameProduct: "Trứng cá tầm Caviar",
+    ImageUrl: "https://product.hstatic.net/1000030244/product/59d8e87f-f840-4c25-bb4a-097780781c76_49bbbbec1bed47d9b9de86b1f75057ac_grande.jpg",
+    Price:1300000,
+    ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
+    Category:"meat",
+    DataUnit:"30gr"
+}
+] 
