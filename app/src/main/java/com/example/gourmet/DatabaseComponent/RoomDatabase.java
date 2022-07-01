@@ -2,7 +2,6 @@ package com.example.gourmet.DatabaseComponent;
 
 import android.app.Application;
 
-
 import androidx.room.Database;
 import androidx.room.Room;
 
