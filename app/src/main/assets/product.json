@@ -168,7 +168,7 @@
         "Price": 200000,
         "ProductDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis cursus lectus. Duis aliquet quis ipsum ut cursus. Integer ac mauris sed sem fringilla tincidunt et fermentum dui. Nunc vehicula.",
         "Category": "dairy",
-        "DataUnit" : "gr"
+        "DataUnit" : "200gr"
     },
     {
         "ProductID" : 101,
@@ -176,7 +176,7 @@
         "ImageUrl": "https://3ner1e34iilsjdn1qohanunu-wpengine.netdna-ssl.com/wp-content/uploads/2022/01/Style2022_Blue1-scaled.jpg",
         "ProductDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis cursus lectus. Duis aliquet quis ipsum ut cursus. Integer ac mauris sed sem fringilla tincidunt et fermentum dui. Nunc vehicula.",
         "Category" :"dairy",
-        "DataUnit" : "gr"
+        "DataUnit" : "200gr"
     },
     {
         "ProductID": 102,
@@ -200,7 +200,7 @@
         "ImageUrl": "https://cf.shopee.vn/file/a62f34b2d4e9c141e2080335b6e6ff09",
         "ProductDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis cursus lectus. Duis aliquet quis ipsum ut cursus. Integer ac mauris sed sem fringilla tincidunt et fermentum dui. Nunc vehicula.",
         "Category":"dairy",
-        "DataUnit":"gr"
+        "DataUnit":"200gr"
     },
     {
         "ProductID": 105,
@@ -208,6 +208,6 @@
         "ImageUrl": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/5f2321b9b144e2c9343ea3ac_00099482436568-00099482436568-c1c1.jpg",
         "ProductDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis cursus lectus. Duis aliquet quis ipsum ut cursus. Integer ac mauris sed sem fringilla tincidunt et fermentum dui. Nunc vehicula.",
         "Category":"dairy",
-        "DataUnit": "gr"
+        "DataUnit": "200gr"
     }
 ] 
