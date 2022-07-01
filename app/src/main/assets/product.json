@@ -159,5 +159,54 @@
     ProductDescription:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit pariatur odio obcaecati iusto veritatis modi est explicabo doloremque veniam omnis aliquam deserunt, laboriosam quos hic repellat ratione vel.",
     Category:"meat",
     DataUnit:"30gr"
-}
+},
+    {
+        "ProductID" : 100,
+        "NameProduct": "Phô mai Mozzarella",
+        "ImageUrl":"https://m.media-amazon.com/images/I/61T05kcPi5S._SL1500_.jpg",
+        "Price": 200000,
+        "ProductDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis cursus lectus. Duis aliquet quis ipsum ut cursus. Integer ac mauris sed sem fringilla tincidunt et fermentum dui. Nunc vehicula.",
+        "Category": "dairy",
+        "DataUnit" : "gr"
+    },
+    {
+        "ProductID" : 101,
+        "NameProduct" : "Phô mai xanh",
+        "ImageUrl": "https://3ner1e34iilsjdn1qohanunu-wpengine.netdna-ssl.com/wp-content/uploads/2022/01/Style2022_Blue1-scaled.jpg",
+        "ProductDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis cursus lectus. Duis aliquet quis ipsum ut cursus. Integer ac mauris sed sem fringilla tincidunt et fermentum dui. Nunc vehicula.",
+        "Category" :"dairy",
+        "DataUnit" : "gr"
+    },
+    {
+        "ProductID": 102,
+        "NameProduct" : "Sữa dê",
+        "ImageUrl": "https://images.heb.com/is/image/HEBGrocery/001414619?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0",
+        "ProductDescription" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis cursus lectus. Duis aliquet quis ipsum ut cursus. Integer ac mauris sed sem fringilla tincidunt et fermentum dui. Nunc vehicula.",
+        "Category":"dairy",
+        "DataUnit" : "carton"
+    },
+    {
+        "ProductID":103,
+        "NameProduct":"Sữa dừa",
+        "ImageUrl": "https://images.heb.com/is/image/HEBGrocery/001283229",
+        "ProductDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis cursus lectus. Duis aliquet quis ipsum ut cursus. Integer ac mauris sed sem fringilla tincidunt et fermentum dui. Nunc vehicula.",
+        "Category":"dairy",
+        "DataUnit":"carton"
+    },
+    {
+        "ProductID": 104,
+        "NameProduct":"Bơ lạc",
+        "ImageUrl": "https://cf.shopee.vn/file/a62f34b2d4e9c141e2080335b6e6ff09",
+        "ProductDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis cursus lectus. Duis aliquet quis ipsum ut cursus. Integer ac mauris sed sem fringilla tincidunt et fermentum dui. Nunc vehicula.",
+        "Category":"dairy",
+        "DataUnit":"gr"
+    },
+    {
+        "ProductID": 105,
+        "NameProduct":"Bơ hữu cơ",
+        "ImageUrl": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/5f2321b9b144e2c9343ea3ac_00099482436568-00099482436568-c1c1.jpg",
+        "ProductDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis cursus lectus. Duis aliquet quis ipsum ut cursus. Integer ac mauris sed sem fringilla tincidunt et fermentum dui. Nunc vehicula.",
+        "Category":"dairy",
+        "DataUnit": "gr"
+    }
 ] 
