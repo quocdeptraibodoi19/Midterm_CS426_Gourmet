@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import com.example.gourmet.DataElement.ProductElement;
 import com.example.gourmet.DatabaseComponent.Repository;
@@ -20,6 +21,10 @@ public class ProductViewModel extends AndroidViewModel {
 
     public LiveData<List<ProductElement>> getProductList(){
         return repository.getProductList();
+    }
+
+    public ProductElement getProductElement_ID_WithoutLiveData(int id) throws ExecutionException, InterruptedException {
+        return repository.getProduct_ID_Without_Livedata(id);
     }
 
     public void insertProductElement(ProductElement productElement){

@@ -12,13 +12,13 @@ public class StoreElement {
     @NonNull
     @PrimaryKey
     @ColumnInfo(name = "StoreID")
-    int StoreID;
+    private int StoreID;
     @NonNull
     @ColumnInfo(name = "Address")
-    String Address;
+    private String Address;
     @NonNull
     @ColumnInfo(name = "MapCode")
-    String MapCode;
+    private String MapCode;
 
     public StoreElement(){
         StoreID = -1;

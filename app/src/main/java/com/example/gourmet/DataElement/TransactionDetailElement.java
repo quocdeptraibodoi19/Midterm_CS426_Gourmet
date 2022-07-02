@@ -13,13 +13,13 @@ import androidx.room.ForeignKey;
 public class TransactionDetailElement {
     @NonNull
     @ColumnInfo(name = "TransactionID")
-    int TransactionID;
+    private int TransactionID;
     @NonNull
     @ColumnInfo(name = "ProductID")
-    int ProductID;
+    private int ProductID;
     @NonNull
     @ColumnInfo(name = "NumberOfProduct")
-    int NumOfProduct;
+    private int NumOfProduct;
 
     public TransactionDetailElement(){
         TransactionID = -1;
