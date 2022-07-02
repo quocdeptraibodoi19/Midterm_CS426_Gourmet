@@ -30,7 +30,13 @@
         android:label="ProductListFragment" >
         <action
             android:id="@+id/action_productListFragment_to_productDetailFragment"
-            app:destination="@id/productDetailFragment" />
+            app:destination="@id/productDetailFragment">
+            <argument
+                android:name="ProductId"
+                app:argType="integer"
+                android:defaultValue="1"
+                />
+        </action>
         <action
             android:id="@+id/action_productListFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
@@ -121,7 +127,13 @@
     <fragment
         android:id="@+id/productDetailFragment"
         android:name="com.example.gourmet.Activity_Fragment.ProductDetailFragment"
-        android:label="ProductDetailFragment" />
+        android:label="ProductDetailFragment">
+        <argument
+            android:name="ProductId"
+            app:argType="integer"
+            android:defaultValue="1"
+            />
+    </fragment>
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.example.gourmet.Activity_Fragment.CartFragment"

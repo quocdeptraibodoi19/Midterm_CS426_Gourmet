@@ -23,6 +23,7 @@ import java.util.List;
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ProductViewHolder> {
 
     private List<ProductElement> products = new ArrayList<>();
+    private OnProductClickListener listener;
 
     public ProductListAdapter() {
     }
@@ -51,7 +52,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         notifyDataSetChanged();
     }
 
-    public static class ProductViewHolder extends RecyclerView.ViewHolder {
+    class ProductViewHolder extends RecyclerView.ViewHolder {
 
         private final ImageView avatar;
         private final TextView name;
@@ -63,6 +64,24 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             avatar = (ImageView) itemView.findViewById(R.id.productAvatarID);
             name = (TextView) itemView.findViewById(R.id.productNameID);
             price = (TextView) itemView.findViewById(R.id.productPriceID);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    if(listener != null && pos != RecyclerView.NO_POSITION){
+                        listener.onProductClick(products.get(pos));
+                    }
+                }
+            });
         }
+    }
+
+    public interface OnProductClickListener{
+        void onProductClick(ProductElement product);
+    }
+
+    public void setOnProductClickListener(OnProductClickListener listener){
+        this.listener = listener;
     }
 }

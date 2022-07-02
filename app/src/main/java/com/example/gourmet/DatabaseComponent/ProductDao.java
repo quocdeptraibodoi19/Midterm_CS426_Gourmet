@@ -17,8 +17,10 @@ public interface ProductDao {
 
     @Insert(onConflict = OnConflictStrategy.FAIL)
     void InsertProductDao(ProductElement productElement);
+
     @Delete
     void DeleteProductDao(ProductElement productElement);
+
     @Query("Select * from ProductTable")
-   LiveData<List<ProductElement>> getListProductElement();
+    LiveData<List<ProductElement>> getListProductElement();
 }

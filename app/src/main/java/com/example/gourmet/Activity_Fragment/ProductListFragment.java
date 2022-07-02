@@ -9,8 +9,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,8 +23,10 @@ import com.example.gourmet.DataElement.ProductElement;
 import com.example.gourmet.R;
 import com.example.gourmet.ViewModel.ProductViewModel;
 
+import java.nio.BufferUnderflowException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ProductListFragment extends Fragment {
 
@@ -41,6 +45,17 @@ public class ProductListFragment extends Fragment {
         recyclerView = rootView.findViewById(R.id.product_list_recyclerview);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        adapter.setOnProductClickListener(new ProductListAdapter.OnProductClickListener() {
+            @Override
+            public void onProductClick(ProductElement product) {
+                int id = product.getProductID();
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("ProductId", id);
+
+                NavHostFragment.findNavController(ProductListFragment.this).navigate(R.id.action_productListFragment_to_productDetailFragment, bundle);
+            }
+        });
 
         viewModel.getProductList().observe(getViewLifecycleOwner(), productElements -> {
             adapter.setProducts(productElements);

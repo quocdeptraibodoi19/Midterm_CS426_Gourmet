@@ -17,12 +17,15 @@ public class ProductViewModel extends AndroidViewModel {
         super(application);
         repository = new Repository(application);
     }
+
     public LiveData<List<ProductElement>> getProductList(){
         return repository.getProductList();
     }
+
     public void insertProductElement(ProductElement productElement){
         repository.InsertProduct(productElement);
     }
+
     public void deleteProductElement(ProductElement productElement){
         repository.DeleteProduct(productElement);
     }
