@@ -29,4 +29,8 @@ public class ProductViewModel extends AndroidViewModel {
     public void deleteProductElement(ProductElement productElement){
         repository.DeleteProduct(productElement);
     }
+
+    public LiveData<ProductElement> getProductById(int id){
+        return repository.getProductById(id);
+    }
 }

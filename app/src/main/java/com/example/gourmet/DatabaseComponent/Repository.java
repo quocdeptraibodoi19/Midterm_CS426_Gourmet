@@ -53,6 +53,10 @@ public class Repository {
         service.shutdown();
     }
 
+    public LiveData<ProductElement> getProductById(int id){
+        return productDao.getProductById(id);
+    }
+
     // StoreDAO
     public LiveData<List<StoreElement>> getStoreList() {
         return storeDao.GetListStoreElement();

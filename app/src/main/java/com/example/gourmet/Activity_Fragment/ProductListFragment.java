@@ -42,9 +42,11 @@ public class ProductListFragment extends Fragment {
 
         adapter = new ProductListAdapter();
         viewModel =  new ViewModelProvider(this).get(ProductViewModel.class);
+
         recyclerView = rootView.findViewById(R.id.product_list_recyclerview);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+
         adapter.setOnProductClickListener(new ProductListAdapter.OnProductClickListener() {
             @Override
             public void onProductClick(ProductElement product) {

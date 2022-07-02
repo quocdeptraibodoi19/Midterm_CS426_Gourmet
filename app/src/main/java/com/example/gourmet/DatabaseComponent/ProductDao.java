@@ -23,4 +23,7 @@ public interface ProductDao {
 
     @Query("Select * from ProductTable")
     LiveData<List<ProductElement>> getListProductElement();
+
+    @Query("Select * from ProductTable where ProductID=:id")
+    LiveData<ProductElement> getProductById(int id);
 }
