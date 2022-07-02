@@ -46,7 +46,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                 .centerCrop()
                 .into(holder.avatar);
         holder.name.setText(product.getNameProduct());
-        holder.price.setText(String.format("%d/%s", (int)product.getPrice(), product.getDataUnit()));
+        holder.price.setText(String.format("%dVND/%s", (int)product.getPrice(), product.getDataUnit()));
     }
 
     @Override

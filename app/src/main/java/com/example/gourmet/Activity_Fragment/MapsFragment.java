@@ -3,6 +3,8 @@ package com.example.gourmet.Activity_Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +14,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.example.gourmet.DataElement.StoreElement;
 import com.example.gourmet.R;
+import com.example.gourmet.ViewModel.StoreViewModel;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -22,21 +26,21 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MapsFragment extends Fragment {
     private GoogleMap mMap;
     private Spinner spinner;
+    private StoreViewModel viewModel;
 
-    // Test data
-    private String[] names = {"Store 1", "Store 2", "Store 3"};
-    private double lat[] = {10.8111573, 10.762902459902067, 10.774353705462936};
-    private double lng[] = {106.67847448373712,106.68208876402593, 106.70450299113612};
+    private List<StoreElement> stores = new ArrayList<>();
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         @Override
         public void onMapReady(GoogleMap googleMap) {
             mMap = googleMap;
-            setMapPosition(0);
         }
     };
 
@@ -46,6 +50,8 @@ public class MapsFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_maps, container, false);
+
+        viewModel = new ViewModelProvider(this).get(StoreViewModel.class);
 
         // Initialize spinner
         spinner = (Spinner) view.findViewById(R.id.spinner);
@@ -61,9 +67,23 @@ public class MapsFragment extends Fragment {
             }
         });
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this.getActivity(), R.layout.spinner_item, names);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this.getActivity(), R.layout.spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);
+
+        viewModel.getStoreList().observe(getViewLifecycleOwner(), new Observer<List<StoreElement>>() {
+            @Override
+            public void onChanged(List<StoreElement> storeElements) {
+                stores = storeElements;
+
+                List<String> address = new ArrayList<>();
+                for(StoreElement element : storeElements){
+                    address.add(element.getAddress());
+                }
+                arrayAdapter.clear();
+                arrayAdapter.addAll(address);
+            }
+        });
 
         return view;
     }
@@ -79,13 +99,14 @@ public class MapsFragment extends Fragment {
     }
 
     private void setMapPosition(int position){
-        LatLng pos = new LatLng(lat[position], lng[position]);
+        StoreElement store = stores.get(position);
+        LatLng pos = new LatLng(store.getLatitude(), store.getLongitude());
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(pos, 15);
         mMap.moveCamera(cameraUpdate);
         Marker marker = mMap.addMarker(new MarkerOptions()
                 .position(pos)
-                .title(names[position])
-                .snippet("Address of this place"));
+                .title("Store " + String.valueOf(position + 1))
+                .snippet(store.getAddress()));
 
         assert marker != null;
         marker.showInfoWindow();

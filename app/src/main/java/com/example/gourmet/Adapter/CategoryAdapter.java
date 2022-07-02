@@ -26,6 +26,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     private final LayoutInflater inflater;
     private final HomeFragment homeFragment;
     private Context context;
+
+    private OnCategoryClickListener listener;
+
     public CategoryAdapter(Context context, HomeFragment fragment){
         categoryObjList = new ArrayList<>();
         inflater = LayoutInflater.from(context);
@@ -42,7 +45,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
-        holder.materialButton.setText(categoryObjList.get(position).getName());
+        holder.materialButton.setText(categoryObjList.get(position).getDisplayName());
         Glide.with(context).
                load(categoryObjList.get(position).getUrl())
                 .centerCrop()
@@ -60,16 +63,29 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     class CategoryViewHolder extends RecyclerView.ViewHolder{
         private ImageView imageView;
         private MaterialButton materialButton;
+
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.overlayID);
             materialButton = itemView.findViewById(R.id.catte_buttonID);
+
             materialButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    NavHostFragment.findNavController(homeFragment).navigate(R.id.action_homeFragment_to_productListFragment);
+                    int pos = getAdapterPosition();
+                    if (listener != null && pos != RecyclerView.NO_POSITION){
+                        listener.onCategoryClick(categoryObjList.get(pos));
+                    }
                 }
             });
         }
+    }
+
+    public interface OnCategoryClickListener {
+        void onCategoryClick (CategoryObj category);
+    }
+
+    public void setOnCategoryClickListener(OnCategoryClickListener listener){
+        this.listener = listener;
     }
 }

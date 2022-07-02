@@ -67,7 +67,7 @@ public class ProductDetailFragment extends Fragment {
                         .centerCrop()
                         .into(image);
                 name.setText(productElement.getNameProduct());
-                price.setText(String.format("%d/%s", (int)productElement.getPrice(), productElement.getDataUnit()));
+                price.setText(String.format("%dVND/%s", (int)productElement.getPrice(), productElement.getDataUnit()));
                 description.setText(productElement.getProductDescription());
             }
         });
