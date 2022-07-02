@@ -22,8 +22,8 @@
         android:layout_toRightOf="@+id/carted_product_id"
         android:fontFamily="@font/playfair_display"
         android:text="@string/title"
-        android:textSize="18sp"
         android:textColor="#FFFFFF"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
@@ -36,16 +36,17 @@
         android:layout_toRightOf="@+id/carted_product_id"
         android:fontFamily="@font/roboto"
         android:text="@string/title"
-        android:textSize="14sp"
         android:textColor="#FFFFFF"
+        android:textSize="14sp"
         android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/carted_minus_id"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/minus"
+        android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@id/cart_product_number_id"
-        android:layout_alignParentBottom="true"/>
+        android:src="@drawable/minus" />
 
     <TextView
         android:id="@+id/cart_product_number_id"

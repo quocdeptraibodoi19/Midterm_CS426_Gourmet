@@ -1,5 +1,7 @@
 package com.example.gourmet.DataElement;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -67,8 +69,34 @@ public class TransactionSingleton {
     public void setAddress(String address) {
         this.address = address;
     }
+    public ArrayList<TransactionProductUnit> getTransactionProductUnitList(){
+        ArrayList<TransactionProductUnit> productUnits = new ArrayList<>();
+        for(int i=0; i < productElementArrayList.size(); i++)
+            productUnits.add(new TransactionProductUnit(productElementArrayList.get(i),number_product_map.get(productElementArrayList.get(i).getProductID())));
+        return productUnits;
+    }
+    public void setNumberProduct(int productId, int numberCount){
+            if(numberCount == 0)
+            {
+                number_product_map.remove(productId);
+                for(int i=0;i<productElementArrayList.size();i++)
+                    if(productElementArrayList.get(i).getProductID() == productId)
+                    {
+                        Log.d("Test", "setNumberProduct: "+ productElementArrayList.get(i).getNameProduct());
+                        productElementArrayList.remove(i);
+                        break;
+                    }
+            }
+            else number_product_map.put(productId,numberCount);
+    }
     public void clear(){
         productElementArrayList = new ArrayList<>();
         number_product_map = new HashMap<>();
+    }
+    public float getTotalMoneyTransaction(){
+        float res =0;
+        for(int i=0;i<productElementArrayList.size();i++)
+            res = res + productElementArrayList.get(i).getPrice()*number_product_map.get(productElementArrayList.get(i).getProductID());
+        return res;
     }
 }

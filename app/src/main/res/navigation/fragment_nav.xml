@@ -137,5 +137,9 @@
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.example.gourmet.Activity_Fragment.CartFragment"
-        android:label="CartFragment" />
+        android:label="CartFragment" >
+        <action
+            android:id="@+id/action_cartFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
