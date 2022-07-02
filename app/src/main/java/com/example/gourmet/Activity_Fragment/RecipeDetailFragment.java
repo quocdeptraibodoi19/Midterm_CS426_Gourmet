@@ -4,46 +4,43 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.bumptech.glide.Glide;
 import com.example.gourmet.R;
+
+import java.util.ArrayList;
 
 public class RecipeDetailFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View rootView = inflater.inflate(R.layout.recipe_detail_fragment,container,false);
-        View fragment = rootView.findViewById(R.id.navigationbarID_recipedetailfrag);
-        fragment.findViewById(R.id.homeIconId).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(RecipeDetailFragment.this).navigate(R.id.action_recipeDetailFragment_to_homeFragment);
-            }
-        });
-        fragment.findViewById(R.id.shopIconId).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(RecipeDetailFragment.this).navigate(R.id.action_recipeDetailFragment_to_mapsFragment);
-            }
-        });
-        fragment.findViewById(R.id.recipeIconId).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(RecipeDetailFragment.this).navigate(R.id.action_recipeDetailFragment_to_recipeListFragment);
 
-            }
-        });
-        fragment.findViewById(R.id.transactionIconId).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(RecipeDetailFragment.this).navigate(R.id.action_recipeDetailFragment_to_transactionHistoryFragment);
+        TextView nameRecipeTextView = rootView.findViewById(R.id.nameRecipeID);
+        nameRecipeTextView.setText(getArguments().getString("Recipe_Name_String"));
 
-            }
-        });
+        TextView ingredientTextView = rootView.findViewById(R.id.recipeIngredientID);
+        ArrayList<String> ingredientList;
+        ingredientList = getArguments().getStringArrayList("Recipe_Ingredient_ArrayList");
+        ingredientTextView.setText(ingredientList.toString());
+
+        TextView instructionTextView = rootView.findViewById(R.id.instructionrecipID);
+        ArrayList<String> instructionList;
+        instructionList = getArguments().getStringArrayList("Recipe_Instruction_ArrayList");
+        ingredientTextView.setText(instructionList.toString());
+
+        Glide.with(getContext()).load(getArguments().getString("Recipe_Url_String"))
+                .centerCrop()
+                .into((ImageView) rootView.findViewById(R.id.RecipeImageID));
+
         return rootView;
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -24,7 +25,7 @@
             android:layout_centerInParent="true"
             android:textSize="24sp"/>
 
-        <EditText
+        <com.example.gourmet.ExtendView.ExtendedEditView
             android:id="@+id/findingBarID_recipelistfrag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,18 +37,36 @@
             android:inputType="text|textNoSuggestions"
             android:padding="12dp"
             android:textColor="#AEAEAE" />
-        <GridView
-            android:id="@+id/recipe_list_gridview_id"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="12dp"
-            android:columnWidth="200dp"
-            android:numColumns="auto_fit"
-            android:stretchMode="columnWidth"
-            android:gravity="center"
-            android:horizontalSpacing="5dp"
-            android:verticalSpacing="5dp"
-            tools:listitem="@layout/recipecell_layout"
-            android:layout_height="wrap_content"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <GridView
+                android:id="@+id/recipe_list_gridview_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnWidth="200dp"
+                android:gravity="center"
+                android:horizontalSpacing="5dp"
+                android:numColumns="auto_fit"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/recipecell_layout" />
+
+            <ProgressBar
+                android:id="@+id/recipe_list_progress_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="#FCFCFC"
+                app:layout_constraintBottom_toBottomOf="@+id/recipe_list_gridview_id"
+                app:layout_constraintEnd_toEndOf="@+id/recipe_list_gridview_id"
+                app:layout_constraintStart_toStartOf="@+id/recipe_list_gridview_id"
+                app:layout_constraintTop_toTopOf="@+id/recipe_list_gridview_id" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <fragment
