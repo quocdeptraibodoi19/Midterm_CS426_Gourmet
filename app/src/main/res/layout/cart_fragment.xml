@@ -11,9 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
@@ -22,6 +23,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:text="@string/san_pham_title"
+                android:layout_marginBottom="8dp"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -157,17 +159,18 @@
                 android:text="@string/address_sample"
                 android:textColor="#FFFFFF" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </ScrollView>
 
     <RelativeLayout
         android:id="@+id/tienbarlayoutID"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        android:background="#585858"
-        android:layout_alignParentBottom="true">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:layout_alignParentBottom="true"
+        android:background="#585858">
 
         <LinearLayout
             android:id="@+id/tientextviewcombinationID"

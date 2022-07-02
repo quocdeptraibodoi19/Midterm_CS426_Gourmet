@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,7 +33,17 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.home_fragment,container,false);
-        View fragment = rootView.findViewById(R.id.navigationbarID_homefrag);
+        View Navfragment = rootView.findViewById(R.id.navigationbarID_homefrag);
+        View ActionBarFragment = rootView.findViewById(R.id.actionBar_homefrag_id);
+        TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
+        namefragment.setText("Gourmet");
+        ActionBarFragment.findViewById(R.id.cart_icon_id).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(HomeFragment.this).navigate(R.id.action_homeFragment_to_cartFragment);
+            }
+        });
+
         List<CategoryObj> categoryObjList = new ArrayList<>();
         Log.d("Quoc", "onCreateView: HomeFragment");
         ProductViewModel productViewModel = new ProductViewModel(getActivity().getApplication());
@@ -58,26 +69,26 @@ public class HomeFragment extends Fragment {
         categoryRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-        fragment.findViewById(R.id.shopIconId).setOnClickListener(new View.OnClickListener() {
+        Navfragment.findViewById(R.id.shopIconId).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(HomeFragment.this).navigate(R.id.action_homeFragment_to_mapsFragment);
             }
         });
-        fragment.findViewById(R.id.transactionIconId).setOnClickListener(new View.OnClickListener() {
+        Navfragment.findViewById(R.id.transactionIconId).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(HomeFragment.this).navigate(R.id.action_homeFragment_to_transactionHistoryFragment);
             }
         });
-        fragment.findViewById(R.id.recipeIconId).setOnClickListener(new View.OnClickListener() {
+        Navfragment.findViewById(R.id.recipeIconId).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(HomeFragment.this).navigate(R.id.action_homeFragment_to_recipeListFragment);
             }
         });
 
-        if(fragment != null) Log.d("Quoc", "onCreateView: not null fragment");
+        if(Navfragment != null) Log.d("Quoc", "onCreateView: not null Navfragment");
         if(rootView == null) Log.d("Quoc", "onCreateView: null");
         return rootView;
     }
