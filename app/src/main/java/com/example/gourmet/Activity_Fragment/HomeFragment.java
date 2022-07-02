@@ -33,6 +33,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.home_fragment,container,false);
+
         View Navfragment = rootView.findViewById(R.id.navigationbarID_homefrag);
         View ActionBarFragment = rootView.findViewById(R.id.actionBar_homefrag_id);
         TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
@@ -60,6 +61,7 @@ public class HomeFragment extends Fragment {
         categoryAdapter.setOnCategoryClickListener(category -> {
             Bundle bundle = new Bundle();
             bundle.putString("category", category.getName());
+            bundle.putString("name", category.getDisplayName());
             NavHostFragment.findNavController(HomeFragment.this).navigate(R.id.action_homeFragment_to_productListFragment, bundle);
         });
 

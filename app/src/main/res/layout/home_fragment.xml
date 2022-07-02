@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="#363636">
+
     <fragment
         android:id="@+id/actionBar_homefrag_id"
         android:layout_width="wrap_content"

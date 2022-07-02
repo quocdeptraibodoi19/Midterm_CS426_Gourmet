@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -39,7 +40,18 @@ public class ProductListFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.product_list_fragment,container,false);
         View fragment = rootView.findViewById(R.id.navigationbarID_productlistfrag);
+        View ActionBarFragment = rootView.findViewById(R.id.actionBar_homefrag_id);
+        TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
         String category = getArguments().getString("category", "");
+        String name = getArguments().getString("name", "");
+
+        namefragment.setText(name);
+        ActionBarFragment.findViewById(R.id.cart_icon_id).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(ProductListFragment.this).navigate(R.id.action_productListFragment_to_cartFragment);
+            }
+        });
 
         adapter = new ProductListAdapter();
         viewModel =  new ViewModelProvider(this).get(ProductViewModel.class);

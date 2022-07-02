@@ -7,13 +7,21 @@
     android:orientation="vertical"
     android:background="#363636">
 
+    <fragment
+        android:id="@+id/actionBar_homefrag_id"
+        android:layout_width="wrap_content"
+        android:name="com.example.gourmet.Activity_Fragment.ActionBarFragment"
+        tools:layout="@layout/action_bar"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"/>
+
     <EditText
         android:id="@+id/findingBarID_productlistfrag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="#585858"
@@ -30,10 +38,11 @@
         android:layout_above="@+id/navigationbarID_productlistfrag"
         android:layout_below="@+id/findingBarID_productlistfrag"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="0dp"
         android:columnWidth="60dp"
         android:gravity="center"
-        android:stretchMode="columnWidth"
-    />
+        android:stretchMode="columnWidth" />
 
     <fragment
         android:id="@+id/navigationbarID_productlistfrag"

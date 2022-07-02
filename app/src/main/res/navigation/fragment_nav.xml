@@ -133,6 +133,9 @@
             app:argType="integer"
             android:defaultValue="1"
             />
+        <action
+            android:id="@+id/action_productDetailFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
