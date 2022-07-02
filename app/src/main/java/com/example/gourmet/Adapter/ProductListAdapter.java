@@ -1,6 +1,7 @@
 package com.example.gourmet.Adapter;
 
 import android.animation.LayoutTransition;
+import android.content.Context;
 import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.gourmet.DataElement.ProductElement;
 import com.example.gourmet.R;
 
@@ -24,6 +26,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     private List<ProductElement> products = new ArrayList<>();
     private OnProductClickListener listener;
+    private Context context;
 
     public ProductListAdapter() {
     }
@@ -32,13 +35,16 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     @Override
     public ProductListAdapter.ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_element, parent, false);
+        this.context = parent.getContext();
         return new ProductViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ProductListAdapter.ProductViewHolder holder, int position) {
         ProductElement product = products.get(position);
-        holder.avatar.setImageResource(R.drawable.raucu);
+        Glide.with(context).load(product.getImageUrl())
+                .centerCrop()
+                .into(holder.avatar);
         holder.name.setText(product.getNameProduct());
         holder.price.setText(String.format("%d/%s", (int)product.getPrice(), product.getDataUnit()));
     }

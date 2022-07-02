@@ -3,12 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="4dp">
+
     <ImageView
         android:id="@+id/productAvatarID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/tatca1"
-        android:layout_marginBottom="6dp"/>
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="6dp"
+        android:src="@drawable/tatca1" />
 
     <TextView
         android:id="@+id/productNameID"
