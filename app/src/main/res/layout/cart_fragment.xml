@@ -160,7 +160,45 @@
                 android:padding="12dp"
                 android:hint="@string/address_sample"
                 android:textColor="#FFFFFF" />
-
+            <RadioGroup
+                android:id="@+id/storegroup"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/store1optionid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Store 1"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    />
+                <RadioButton
+                    android:id="@+id/store2optionid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Store 2"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+                <RadioButton
+                    android:id="@+id/store3optionid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Store 3"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+            </RadioGroup>
         </LinearLayout>
 
     </ScrollView>

@@ -13,6 +13,7 @@ public class TransactionSingleton {
     private String nameUser;
     private String phoneNumber;
     private String address;
+    private int storeid;
 
     private TransactionSingleton(){
         productElementArrayList = new ArrayList<>();
@@ -20,6 +21,7 @@ public class TransactionSingleton {
         nameUser = "Nguyen Van A";
         phoneNumber = "0869314924";
         address = "123/456A Nguyễn Thị Minh Khai, phường 2, quận 13";
+        storeid = 1;
     }
 
     public static TransactionSingleton getInstance(){
@@ -38,6 +40,14 @@ public class TransactionSingleton {
 
     public String getAddress() {
         return address;
+    }
+
+    public int getStoreid() {
+        return storeid;
+    }
+
+    public void setStoreid(int storeid) {
+        this.storeid = storeid;
     }
 
     public ArrayList<ProductElement> getProductElementArrayList() {

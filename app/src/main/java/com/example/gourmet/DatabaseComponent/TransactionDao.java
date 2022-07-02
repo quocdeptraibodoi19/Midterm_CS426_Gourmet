@@ -26,4 +26,7 @@ public interface TransactionDao {
 
     @Query("Select * from StoreTable where StoreTable.StoreID in (select Transaction_table.StoreID from Transaction_table where Transaction_table.TransactionID = :TransactionID)")
     StoreElement GetStoreElement(int TransactionID);
+
+    @Query("Select MAX(TransactionID) from transaction_table")
+    int getLastestID();
 }

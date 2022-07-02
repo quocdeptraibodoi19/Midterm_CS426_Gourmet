@@ -1,6 +1,7 @@
 package com.example.gourmet.DatabaseComponent;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
@@ -8,7 +9,9 @@ import com.example.gourmet.DataElement.ProductElement;
 import com.example.gourmet.DataElement.StoreElement;
 import com.example.gourmet.DataElement.TransactionDetailElement;
 import com.example.gourmet.DataElement.TransactionElement;
+import com.example.gourmet.DataElement.TransactionSingleton;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -167,5 +170,27 @@ public class Repository {
             }
         });
         service.shutdown();
+    }
+    public void InsertTransactionAndDetail(TransactionElement transactionElement){
+        TransactionSingleton singleton = TransactionSingleton.getInstance();
+        ExecutorService service = Executors.newSingleThreadExecutor();
+            service.execute(new Runnable() {
+                @Override
+                public void run() {
+                    transactionDao.InsertTransactionDao(transactionElement);
+                    int id = transactionDao.getLastestID();
+                    Log.d("min", "run: new id+ "+ String.valueOf(id));
+                    TransactionDetailElement transactionDetailElement;
+                    ArrayList<ProductElement> productElementArrayList = singleton.getProductElementArrayList();
+                    for(int i=0;i< productElementArrayList.size();i++){
+                        int productId = productElementArrayList.get(i).getProductID();
+                        transactionDetailElement = new TransactionDetailElement(id,productId, singleton.getNumberProduct_Id(productId));
+                        transactionDetailDao.InsertTransactionDetailDao(transactionDetailElement);
+                    }
+                    singleton.clear();
+                    Log.d("min", "run: "+ singleton.getAddress());
+                }
+            });
+            service.shutdown();
     }
 }
