@@ -17,7 +17,7 @@ import com.example.gourmet.DataElement.TransactionElement;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {ProductElement.class, StoreElement.class, TransactionElement.class, TransactionDetailElement.class},version = 5,exportSchema = false)
+@Database(entities = {ProductElement.class, StoreElement.class, TransactionElement.class, TransactionDetailElement.class},version = 8,exportSchema = false)
 public abstract class RoomDatabase extends androidx.room.RoomDatabase {
     public abstract ProductDao productDao();
     public abstract StoreDao storeDao();
@@ -31,7 +31,6 @@ public abstract class RoomDatabase extends androidx.room.RoomDatabase {
                     Log.d("Thi", "onCreate: populate database");
                     instance = Room.databaseBuilder(application,RoomDatabase.class,"GourmetRoomDatabase")
                             .createFromAsset("Database/Product.db")
-                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }

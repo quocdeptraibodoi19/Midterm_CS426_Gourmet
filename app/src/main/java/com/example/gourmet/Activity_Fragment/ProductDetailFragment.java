@@ -92,9 +92,11 @@ public class ProductDetailFragment extends Fragment {
             public void onClick(View v) {
                 TransactionSingleton transactionSingleton = TransactionSingleton.getInstance();
                 try {
-                    ProductElement productElement = viewModel.getProductElement_ID_WithoutLiveData(productId);
-                    transactionSingleton.addProductElementArrayList(productElement,numOfProducts);
-                    Log.d("QuocTransaction", "onClick: Transaction Successfully "+productElement.getNameProduct() + " "+ String.valueOf(transactionSingleton.getNumberProduct_Id(productId)));
+                    if(numOfProducts != 0) {
+                        ProductElement productElement = viewModel.getProductElement_ID_WithoutLiveData(productId);
+                        transactionSingleton.addProductElementArrayList(productElement, numOfProducts);
+                        Log.d("QuocTransaction", "onClick: Transaction Successfully " + productElement.getNameProduct() + " " + String.valueOf(transactionSingleton.getNumberProduct_Id(productId)));
+                    }
                     getActivity().onBackPressed();
                 } catch (ExecutionException e) {
                     e.printStackTrace();

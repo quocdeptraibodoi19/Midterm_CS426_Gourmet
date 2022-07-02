@@ -103,6 +103,9 @@
         <action
             android:id="@+id/action_transactionHistoryFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipeDetailFragment"

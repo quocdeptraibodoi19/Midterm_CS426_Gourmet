@@ -20,8 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -59,7 +57,5 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/codetransactiontxtviewID"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/datetransactiontxtviewID"
-        app:layout_constraintTop_toTopOf="@+id/datetransactiontxtviewID" />
+        app:layout_constraintTop_toTopOf="@+id/transactiondatetxtviewID" />
 </androidx.constraintlayout.widget.ConstraintLayout>

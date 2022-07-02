@@ -125,13 +125,23 @@ public class Repository {
     }
     //TODO: Just want to test the runnable
     public void InsertTransaction(TransactionElement transactionElement){
+//        ExecutorService service = Executors.newSingleThreadExecutor();
+//        Future<?> future = service.submit(new Runnable() {
+//            @Override
+//            public void run() {
+//                transactionDao.InsertTransactionDao(transactionElement);
+//            }
+//        });
         ExecutorService service = Executors.newSingleThreadExecutor();
-        Future<?> future = service.submit(new Runnable() {
+        service.execute(new Runnable() {
             @Override
             public void run() {
                 transactionDao.InsertTransactionDao(transactionElement);
+                int id = transactionDao.getLastestID();
+                Log.d("Thi", "run: latestID"+ String.valueOf(id));
             }
         });
+        service.shutdown();
     }
     public void DeleteTransaction(TransactionElement transactionElement){
         ExecutorService service= Executors.newSingleThreadExecutor();

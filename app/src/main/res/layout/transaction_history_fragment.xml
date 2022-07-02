@@ -5,9 +5,19 @@
     android:background="#363636"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <fragment
+        android:id="@+id/action_bar_historytransaction"
+        android:name="com.example.gourmet.Activity_Fragment.ActionBarFragment"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/action_bar"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
+        android:layout_below="@id/action_bar_historytransaction"
         android:id="@+id/transactionhistoryrecyclerviewID"
         android:layout_width="match_parent"
         android:layout_above="@+id/navigationbarID_transactionhistoryfrag"

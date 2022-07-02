@@ -61,6 +61,7 @@ public class CartFragment extends Fragment {
                 transactionSingleton.clear();
                 rootView.findViewById(R.id.SoTienTextViewID);
                 cartAdapter.setTransactionProductUnits(transactionSingleton.getTransactionProductUnitList());
+                getActivity().onBackPressed();
             }
         });
         InsertCartBtn.setOnClickListener(new View.OnClickListener() {
@@ -120,7 +121,8 @@ public class CartFragment extends Fragment {
                 LocalDateTime now = LocalDateTime.now();
                 transactiondate = dateFormat.format(now);
                 TransactionElement transactionElement = new TransactionElement(transactiondate,transactionSingleton.getStoreid(),transactionSingleton.getNameUser(),transactionSingleton.getPhoneNumber(),transactionSingleton.getAddress(),transactionSingleton.getTotalMoneyTransaction());
-                transactionViewModel.insertTransactionAndDetail(transactionElement);
+//                transactionViewModel.insertTransactionAndDetail(transactionElement);
+                transactionViewModel.insertTransactionElement(transactionElement);
                 getActivity().onBackPressed();
             }
         });

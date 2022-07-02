@@ -16,7 +16,7 @@ import java.util.List;
 
 @Dao
 public interface TransactionDao {
-    @Insert(onConflict = OnConflictStrategy.FAIL)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void InsertTransactionDao(TransactionElement transactionElement);
     @Delete
     void DeleteTransactionDao(TransactionElement transactionElement);
