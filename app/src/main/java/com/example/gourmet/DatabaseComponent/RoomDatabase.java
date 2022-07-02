@@ -30,15 +30,7 @@ public abstract class RoomDatabase extends androidx.room.RoomDatabase {
                 if(instance == null){
                     Log.d("Thi", "onCreate: populate database");
                     instance = Room.databaseBuilder(application,RoomDatabase.class,"GourmetRoomDatabase")
-//                            .addCallback(new Callback() {
-//                                @Override
-//                                public void onCreate(@NonNull SupportSQLiteDatabase db) {
-//                                    super.onCreate(db);
-//                                    Log.d("Thi", "onCreate: populate database");
-//                                    new PopulateDbAsyncTask(instance).execute();
-//                                }
-//                            })
-                            .createFromAsset("Database/ProductTable.db")
+                            .createFromAsset("Database/Product.db")
                             .fallbackToDestructiveMigration()
                             .build();
                 }

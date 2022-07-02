@@ -27,7 +27,7 @@ public class MapsFragment extends Fragment {
     private Spinner spinner;
 
     // Test data
-    private String[] names = {"Home", "School", "Bookstore"};
+    private String[] names = {"Store 1", "Store 2", "Store 3"};
     private double lat[] = {10.8111573, 10.762902459902067, 10.774353705462936};
     private double lng[] = {106.67847448373712,106.68208876402593, 106.70450299113612};
 
