@@ -121,8 +121,8 @@ public class CartFragment extends Fragment {
                 LocalDateTime now = LocalDateTime.now();
                 transactiondate = dateFormat.format(now);
                 TransactionElement transactionElement = new TransactionElement(transactiondate,transactionSingleton.getStoreid(),transactionSingleton.getNameUser(),transactionSingleton.getPhoneNumber(),transactionSingleton.getAddress(),transactionSingleton.getTotalMoneyTransaction());
-//                transactionViewModel.insertTransactionAndDetail(transactionElement);
-                transactionViewModel.insertTransactionElement(transactionElement);
+                transactionViewModel.insertTransactionAndDetail(transactionElement);
+//                transactionViewModel.insertTransactionElement(transactionElement);
                 getActivity().onBackPressed();
             }
         });

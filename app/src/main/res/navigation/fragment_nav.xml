@@ -106,6 +106,9 @@
         <action
             android:id="@+id/action_transactionHistoryFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_transactionHistoryDetailFragment"
+            app:destination="@id/transactionHistoryDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipeDetailFragment"
@@ -148,4 +151,8 @@
             android:id="@+id/action_cartFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/transactionHistoryDetailFragment"
+        android:name="com.example.gourmet.Activity_Fragment.TransactionHistoryDetailFragment"
+        android:label="TransactionHistoryDetailFragment" />
 </navigation>

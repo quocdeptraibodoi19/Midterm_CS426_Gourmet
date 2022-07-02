@@ -56,7 +56,7 @@ public class TransactionHistoryFragment extends Fragment {
             }
         });
 
-        HistoryTransactionAdapter historyTransactionAdapter = new HistoryTransactionAdapter(getContext());
+        HistoryTransactionAdapter historyTransactionAdapter = new HistoryTransactionAdapter(getContext(),TransactionHistoryFragment.this);
         RecyclerView historyRecyclerView = rootView.findViewById(R.id.transactionhistoryrecyclerviewID);
         historyRecyclerView.setAdapter(historyTransactionAdapter);
         historyRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
