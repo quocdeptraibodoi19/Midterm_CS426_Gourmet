@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:paddingHorizontal="4dp">
     <ImageView
-        android:id="@+id/productAvartarID"
+        android:id="@+id/productAvatarID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/tatca1"
@@ -14,7 +14,7 @@
         android:id="@+id/productNameID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/productAvartarID"
+        android:layout_below="@+id/productAvatarID"
         android:fontFamily="@font/playfair_display"
         android:textStyle="bold"
         android:textSize="18sp"

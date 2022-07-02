@@ -76,6 +76,7 @@ public class HomeFragment extends Fragment {
                 NavHostFragment.findNavController(HomeFragment.this).navigate(R.id.action_homeFragment_to_recipeListFragment);
             }
         });
+
         if(fragment != null) Log.d("Quoc", "onCreateView: not null fragment");
         if(rootView == null) Log.d("Quoc", "onCreateView: null");
         return rootView;

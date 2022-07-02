@@ -38,7 +38,7 @@ public abstract class RoomDatabase extends androidx.room.RoomDatabase {
 //                                    new PopulateDbAsyncTask(instance).execute();
 //                                }
 //                            })
-//                            .createFromAsset("database/Gourmet.db")
+                            .createFromAsset("Database/ProductTable.db")
                             .fallbackToDestructiveMigration()
                             .build();
                 }
