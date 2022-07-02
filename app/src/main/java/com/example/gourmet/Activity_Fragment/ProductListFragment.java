@@ -39,6 +39,7 @@ public class ProductListFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.product_list_fragment,container,false);
         View fragment = rootView.findViewById(R.id.navigationbarID_productlistfrag);
+        String category = getArguments().getString("category", "");
 
         adapter = new ProductListAdapter();
         viewModel =  new ViewModelProvider(this).get(ProductViewModel.class);
@@ -59,7 +60,7 @@ public class ProductListFragment extends Fragment {
             }
         });
 
-        viewModel.getProductList().observe(getViewLifecycleOwner(), productElements -> {
+        viewModel.getProductList(category).observe(getViewLifecycleOwner(), productElements -> {
             adapter.setProducts(productElements);
         });
 
