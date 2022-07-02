@@ -4,31 +4,52 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#363636">
-
-    <TextView
-        android:id="@+id/recipeQuestionID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/RecipeQuestion"
-        android:fontFamily="@font/playfair_display"
-        android:layout_marginBottom="8dp"
-        android:textColor="#FCFCFC"
-        android:layout_centerInParent="true"
-        android:textSize="24sp"/>
-
-    <EditText
-        android:id="@+id/findingBarID_recipelistfrag"
+    <LinearLayout
+        android:layout_marginTop="24dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/recipeQuestionID"
+        android:layout_height="match_parent"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="8dp"
-        android:background="#585858"
-        android:fontFamily="@font/roboto"
-        android:inputType="text|textNoSuggestions"
-        android:padding="12dp"
-        android:hint="@string/tim_kiem"
-        android:textColor="#AEAEAE" />
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/navigationbarID_recipelistfrag"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/recipeQuestionID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/RecipeQuestion"
+            android:fontFamily="@font/playfair_display"
+            android:layout_marginBottom="8dp"
+            android:textColor="#FCFCFC"
+            android:layout_centerInParent="true"
+            android:textSize="24sp"/>
+
+        <EditText
+            android:id="@+id/findingBarID_recipelistfrag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recipeQuestionID"
+            android:layout_marginTop="8dp"
+            android:background="#585858"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/tim_kiem"
+            android:inputType="text|textNoSuggestions"
+            android:padding="12dp"
+            android:textColor="#AEAEAE" />
+        <GridView
+            android:id="@+id/recipe_list_gridview_id"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="12dp"
+            android:columnWidth="200dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:gravity="center"
+            android:horizontalSpacing="5dp"
+            android:verticalSpacing="5dp"
+            tools:listitem="@layout/recipecell_layout"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
     <fragment
         android:id="@+id/navigationbarID_recipelistfrag"
         android:name="com.example.gourmet.Activity_Fragment.NavFragment"

@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.gourmet.Network.RecipeInflater;
 import com.example.gourmet.R;
 
 public class RecipeListFragment extends Fragment {
@@ -36,6 +37,8 @@ public class RecipeListFragment extends Fragment {
                 NavHostFragment.findNavController(RecipeListFragment.this).navigate(R.id.action_recipeListFragment_to_transactionHistoryFragment);
             }
         });
+        RecipeInflater recipeInflater = new RecipeInflater(getContext(),rootView.findViewById(R.id.recipe_list_gridview_id));
+        recipeInflater.RecipeSearch("Tomatoes");
         return rootView;
     }
 }

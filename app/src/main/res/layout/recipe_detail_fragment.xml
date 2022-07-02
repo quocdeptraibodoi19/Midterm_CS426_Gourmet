@@ -36,6 +36,37 @@
                 android:layout_marginBottom="12dp"
                 android:layout_height="290dp"/>
             <TextView
+                android:id="@+id/recipeMarkID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Ingredients"
+                android:fontFamily="@font/roboto"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/recipeinstructionID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:fontFamily="@font/roboto"
+                android:layout_marginBottom="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/instructionMarkID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Instructions"
+                android:fontFamily="@font/roboto"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"/>
+
+            <TextView
                 android:id="@+id/instructionrecipID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
