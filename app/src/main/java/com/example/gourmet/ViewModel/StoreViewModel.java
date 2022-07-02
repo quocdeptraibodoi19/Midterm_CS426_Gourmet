@@ -13,16 +13,20 @@ import com.example.gourmet.DatabaseComponent.Repository;
 
 public class StoreViewModel extends AndroidViewModel {
     private final Repository repository;
+
     public StoreViewModel(@NonNull Application application) {
         super(application);
         repository = new Repository(application);
     }
+
     public LiveData<List<StoreElement>> getStoreList(){
         return repository.getStoreList();
     }
+
     public void insertStoreElement(StoreElement storeElement){
         repository.InsertStoreDao(storeElement);
     }
+
     public void deleteStoreElement(StoreElement storeElement){
         repository.DeleteStoreDao(storeElement);
     }

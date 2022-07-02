@@ -13,44 +13,60 @@ public class StoreElement {
     @PrimaryKey
     @ColumnInfo(name = "StoreID")
     int StoreID;
+
     @NonNull
     @ColumnInfo(name = "Address")
     String Address;
-    @NonNull
-    @ColumnInfo(name = "MapCode")
-    String MapCode;
+
+    @ColumnInfo(name = "Latitude")
+    double Latitude;
+
+    @ColumnInfo(name = "Longitude")
+    double Longitude;
 
     public StoreElement(){
-        StoreID = -1;
-        Address = "Undefined";
-        MapCode = "Undefined";
+        this.Address = "";
+        this.Longitude = 0.0;
+        this.Latitude = 0.0;
     }
-    public StoreElement(int StoreID, String Address, String Mapcode){
-        this.StoreID = StoreID;
-        this.Address = Address;
-        this.MapCode = Mapcode;
+
+    public StoreElement(int storeID, @NonNull String address, double latitude, double longitude) {
+        StoreID = storeID;
+        Address = address;
+        Latitude = latitude;
+        Longitude = longitude;
     }
 
     public int getStoreID() {
         return StoreID;
     }
 
-    public String getAddress(){
-        return Address;
-    }
-    public String getMapCode(){
-        return MapCode;
-    }
-
     public void setStoreID(int storeID) {
         StoreID = storeID;
+    }
+
+    @NonNull
+    public String getAddress() {
+        return Address;
     }
 
     public void setAddress(@NonNull String address) {
         Address = address;
     }
 
-    public void setMapCode(@NonNull String mapCode) {
-        MapCode = mapCode;
+    public double getLatitude() {
+        return Latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        Latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return Longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        Longitude = longitude;
     }
 }

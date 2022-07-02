@@ -17,8 +17,10 @@ import java.util.List;
 public interface StoreDao {
     @Insert(onConflict =  OnConflictStrategy.REPLACE)
     void InsertStoreDao(StoreElement storeElement);
+
     @Delete
     void DeleteStoreDao(StoreElement storeElement);
+
     @Query("Select * from StoreTable")
     LiveData<List<StoreElement>> GetListStoreElement();
 }
