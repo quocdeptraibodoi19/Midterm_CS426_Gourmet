@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import com.example.gourmet.DataElement.TransactionDetailElement;
+import com.example.gourmet.DataElement.TransactionElement;
 import com.example.gourmet.DatabaseComponent.Repository;
 
 public class TransactionDetailViewModel extends AndroidViewModel {
@@ -28,5 +29,8 @@ public class TransactionDetailViewModel extends AndroidViewModel {
     }
     public void insertTransactionDetailElement(TransactionDetailElement transactionDetailElement){
         repository.InsertTransactionDetail(transactionDetailElement);
+    }
+    public void insertTransactionAndDetail(TransactionElement transactionElement){
+        repository.InsertTransactionAndDetail(transactionElement);
     }
 }

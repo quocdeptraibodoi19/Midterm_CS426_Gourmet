@@ -20,32 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/date_time_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16sp"
-        android:textColor="#FFFFFF"
-        android:fontFamily="@font/roboto"
-        android:text="-"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/transactiondatetxtviewID"
-        app:layout_constraintStart_toEndOf="@+id/transactiondatetxtviewID" />
 
-    <TextView
-        android:id="@+id/datetransactiontxtviewID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:fontFamily="@font/roboto"
-        android:textColor="#FFFFFF"
-        android:text="TextView"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/date_time_id"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/date_time_id" />
 
     <TextView
         android:id="@+id/textView4"

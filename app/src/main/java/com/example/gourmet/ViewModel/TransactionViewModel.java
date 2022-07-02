@@ -30,4 +30,7 @@ public class TransactionViewModel extends AndroidViewModel {
     public void deleteTransactionElement(TransactionElement transactionElement){
         repository.DeleteTransaction(transactionElement);
     }
+    public void insertTransactionAndDetail(TransactionElement transactionElement){
+        repository.InsertTransactionAndDetail(transactionElement);
+    }
 }
