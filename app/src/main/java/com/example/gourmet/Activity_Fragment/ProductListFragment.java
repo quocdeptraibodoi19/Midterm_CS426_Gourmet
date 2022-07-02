@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gourmet.Adapter.ProductListAdapter;
 import com.example.gourmet.DataElement.ProductElement;
+import com.example.gourmet.ExtendView.ExtendedEditView;
 import com.example.gourmet.R;
 import com.example.gourmet.ViewModel.ProductViewModel;
 
@@ -34,6 +35,7 @@ public class ProductListFragment extends Fragment {
     private RecyclerView recyclerView;
     private ProductListAdapter adapter;
     private ProductViewModel viewModel;
+    private ExtendedEditView editView;
 
     @Nullable
     @Override
@@ -42,6 +44,7 @@ public class ProductListFragment extends Fragment {
         View fragment = rootView.findViewById(R.id.navigationbarID_productlistfrag);
         View ActionBarFragment = rootView.findViewById(R.id.actionBar_homefrag_id);
         TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
+
         String category = getArguments().getString("category", "");
         String name = getArguments().getString("name", "");
 
@@ -53,6 +56,7 @@ public class ProductListFragment extends Fragment {
             }
         });
 
+        editView = rootView.findViewById(R.id.findingBarID_productlistfrag);
         adapter = new ProductListAdapter();
         viewModel =  new ViewModelProvider(this).get(ProductViewModel.class);
 
