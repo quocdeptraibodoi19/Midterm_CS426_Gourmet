@@ -30,12 +30,18 @@ public class RecipeDetailFragment extends Fragment {
         TextView ingredientTextView = rootView.findViewById(R.id.recipeIngredientID);
         ArrayList<String> ingredientList;
         ingredientList = getArguments().getStringArrayList("Recipe_Ingredient_ArrayList");
-        ingredientTextView.setText(ingredientList.toString());
+        String ingredients = "";
+        for(int i=0;i<ingredientList.size(); i++)
+            ingredients = ingredients + ingredientList.get(i) + "\n";
+        ingredientTextView.setText(ingredients);
 
         TextView instructionTextView = rootView.findViewById(R.id.instructionrecipID);
         ArrayList<String> instructionList;
         instructionList = getArguments().getStringArrayList("Recipe_Instruction_ArrayList");
-        ingredientTextView.setText(instructionList.toString());
+        String instruction = "";
+        for(int i=0; i< instructionList.size(); i++)
+            instruction = instruction + instructionList.get(i) + "\n";
+        instructionTextView.setText(instruction);
 
         Glide.with(getContext()).load(getArguments().getString("Recipe_Url_String"))
                 .centerCrop()
