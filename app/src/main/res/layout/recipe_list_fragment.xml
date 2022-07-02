@@ -5,25 +5,35 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#363636">
+
+    <fragment
+        android:id="@+id/actionBar_homefrag_id"
+        android:name="com.example.gourmet.Activity_Fragment.ActionBarFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        tools:layout="@layout/action_bar" />
+
     <LinearLayout
-        android:layout_marginTop="24dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="16dp"
-        android:layout_alignParentTop="true"
         android:layout_above="@id/navigationbarID_recipelistfrag"
+        android:layout_below="@+id/actionBar_homefrag_id"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="0dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/recipeQuestionID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/RecipeQuestion"
-            android:fontFamily="@font/playfair_display"
-            android:layout_marginBottom="8dp"
-            android:textColor="#FCFCFC"
             android:layout_centerInParent="true"
-            android:textSize="24sp"/>
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/playfair_display"
+            android:text="@string/RecipeQuestion"
+            android:textColor="#FCFCFC"
+            android:textSize="24sp" />
 
         <com.example.gourmet.ExtendView.ExtendedEditView
             android:id="@+id/findingBarID_recipelistfrag"
@@ -37,6 +47,7 @@
             android:inputType="text|textNoSuggestions"
             android:padding="12dp"
             android:textColor="#AEAEAE" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -53,8 +64,10 @@
                 android:verticalSpacing="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
                 tools:listitem="@layout/recipecell_layout" />
 
             <ProgressBar

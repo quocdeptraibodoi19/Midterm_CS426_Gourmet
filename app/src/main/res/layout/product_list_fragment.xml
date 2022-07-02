@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_height="wrap_content"/>
 
-    <EditText
+    <com.example.gourmet.ExtendView.ExtendedEditView
         android:id="@+id/findingBarID_productlistfrag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,9 +26,9 @@
         android:layout_marginBottom="16dp"
         android:background="#585858"
         android:fontFamily="@font/roboto"
+        android:hint="Tìm kiếm"
         android:inputType="text|textNoSuggestions"
         android:padding="12dp"
-        android:text="@string/tim_kiem"
         android:textColor="#AEAEAE" />
 
     <androidx.recyclerview.widget.RecyclerView

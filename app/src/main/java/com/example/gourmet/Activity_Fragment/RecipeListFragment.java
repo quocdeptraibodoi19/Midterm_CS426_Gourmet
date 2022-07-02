@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +25,18 @@ public class RecipeListFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.recipe_list_fragment,container,false);
         View fragment = rootView.findViewById(R.id.navigationbarID_recipelistfrag);
+
+        View ActionBarFragment = rootView.findViewById(R.id.actionBar_homefrag_id);
+        TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
+
+        namefragment.setText("Công thức nấu ăn");
+        ActionBarFragment.findViewById(R.id.cart_icon_id).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(RecipeListFragment.this).navigate(R.id.action_recipeListFragment_to_cartFragment);
+            }
+        });
+
         fragment.findViewById(R.id.homeIconId).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -6,12 +6,22 @@
     android:orientation="vertical"
     android:background="#363636">
 
+    <fragment
+        android:id="@+id/actionBar_homefrag_id"
+        android:name="com.example.gourmet.Activity_Fragment.ActionBarFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        tools:layout="@layout/action_bar" />
+
     <TextView
         android:id="@+id/nameRecipeID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/actionBar_homefrag_id"
         android:layout_centerHorizontal="true"
         android:layout_marginVertical="16dp"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/playfair_display"
         android:text="Lasagna"
         android:textColor="#FFFFFF"
