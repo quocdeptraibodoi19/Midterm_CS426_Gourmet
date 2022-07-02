@@ -45,6 +45,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/deletecartbtnID"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="12dp"
@@ -58,6 +59,7 @@
                     android:textStyle="bold" />
 
                 <Button
+                    android:id="@+id/insertcartbtnid"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
