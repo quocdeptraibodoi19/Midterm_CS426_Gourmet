@@ -17,7 +17,7 @@ import com.example.gourmet.DataElement.TransactionElement;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {ProductElement.class, StoreElement.class, TransactionElement.class, TransactionDetailElement.class},version = 4,exportSchema = false)
+@Database(entities = {ProductElement.class, StoreElement.class, TransactionElement.class, TransactionDetailElement.class},version = 5,exportSchema = false)
 public abstract class RoomDatabase extends androidx.room.RoomDatabase {
     public abstract ProductDao productDao();
     public abstract StoreDao storeDao();

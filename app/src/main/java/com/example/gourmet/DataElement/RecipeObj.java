@@ -3,10 +3,10 @@ package com.example.gourmet.DataElement;
 import java.util.ArrayList;
 
 public class RecipeObj {
-    String recipeName;
-    ArrayList<String> recipeIngredientList;
-    ArrayList<String> instructionList;
-    String imgUrl;
+    private String recipeName;
+    private ArrayList<String> recipeIngredientList;
+    private ArrayList<String> instructionList;
+    private String imgUrl;
     RecipeObj(){
         recipeIngredientList = new ArrayList<>();
         instructionList = new ArrayList<>();

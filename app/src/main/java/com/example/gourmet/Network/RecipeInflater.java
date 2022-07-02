@@ -64,7 +64,7 @@ public class RecipeInflater {
                 OkHttpClient client = new OkHttpClient();
 
                 Request request = new Request.Builder()
-                        .url("https://recipesapi2.p.rapidapi.com/recipes/"+new String(search.getBytes(StandardCharsets.UTF_8))+"?maxRecipes=4")
+                        .url("https://recipesapi2.p.rapidapi.com/recipes/"+new String(search.getBytes(StandardCharsets.UTF_8))+"?maxRecipes=10")
                         .get()
                         .addHeader("X-RapidAPI-Key", "54cba44633msh1cb81c3e7a90a1dp18697ajsn9159f3970b57")
                         .addHeader("X-RapidAPI-Host", "recipesapi2.p.rapidapi.com")

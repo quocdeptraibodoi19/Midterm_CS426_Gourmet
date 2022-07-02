@@ -29,6 +29,17 @@ public class Repository {
         transactionDao = roomDatabase.transactionDao();
     }
     // ProductDAO
+    public ProductElement getProduct_ID_Without_Livedata(int id) throws ExecutionException, InterruptedException {
+        ExecutorService service = Executors.newSingleThreadExecutor();
+        Callable<ProductElement> productElementCallable = new Callable<ProductElement>() {
+            @Override
+            public ProductElement call() throws Exception {
+                return productDao.getProductById_WithoutLiveData(id);
+            }
+        };
+        Future<ProductElement> productElementFuture = service.submit(productElementCallable);
+        return productElementFuture.get();
+    }
     public LiveData<List<ProductElement>> getProductList(){
         return productDao.getListProductElement();
     }

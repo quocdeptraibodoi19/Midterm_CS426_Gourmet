@@ -26,4 +26,7 @@ public interface ProductDao {
 
     @Query("Select * from ProductTable where ProductID=:id")
     LiveData<ProductElement> getProductById(int id);
+
+    @Query("Select * from ProductTable where ProductID = :id")
+    ProductElement getProductById_WithoutLiveData(int id);
 }

@@ -10,16 +10,16 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Transaction_table",foreignKeys = {@ForeignKey(entity = StoreElement.class,parentColumns = "StoreID",childColumns = "StoreID",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
 public class TransactionElement {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "TransactionID")
-    int ID;
+    private int ID;
     @NonNull
     @ColumnInfo(name = "TransactionDate")
-    String TransDate;
+    private String TransDate;
     @NonNull
     @ColumnInfo(name = "StoreID")
-    int StoreID;
+    private int StoreID;
 
     public TransactionElement(){
         ID = -1;
@@ -28,7 +28,12 @@ public class TransactionElement {
 
     }
 
-    public TransactionElement(int ID, @NonNull String transDate,  int storeID) {
+    public TransactionElement(@NonNull String transDate, int storeID) {
+        TransDate = transDate;
+        StoreID = storeID;
+    }
+
+    public TransactionElement(int ID, @NonNull String transDate, int storeID) {
         this.ID = ID;
         TransDate = transDate;
         StoreID = storeID;

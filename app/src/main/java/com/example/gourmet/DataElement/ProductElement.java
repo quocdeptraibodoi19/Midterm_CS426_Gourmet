@@ -15,25 +15,25 @@ public class ProductElement {
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "ProductID")
-    int ProductID;
+    private int ProductID;
     @NonNull
     @ColumnInfo(name = "NameProduct")
-    String NameProduct;
+    private String NameProduct;
     @NonNull
     @ColumnInfo(name = "ImageUrl")
-    String ImageUrl;
+    private String ImageUrl;
     @NonNull
     @ColumnInfo(name = "Price")
-    float Price;
+    private float Price;
     @Nullable
     @ColumnInfo(name = "ProductDescription")
-    String ProductDescription;
+    private String ProductDescription;
     @NonNull
     @ColumnInfo(name = "Category")
-    String Category;
+    private String Category;
     @NonNull
     @ColumnInfo(name = "DataUnit")
-    String DataUnit;
+    private String DataUnit;
 
     public ProductElement(){
         ProductID = -1;

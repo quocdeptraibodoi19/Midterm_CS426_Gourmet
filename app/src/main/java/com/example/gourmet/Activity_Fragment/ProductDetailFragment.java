@@ -12,15 +12,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.bumptech.glide.Glide;
 import com.example.gourmet.DataElement.ProductElement;
+import com.example.gourmet.DataElement.TransactionSingleton;
 import com.example.gourmet.R;
 import com.example.gourmet.ViewModel.ProductViewModel;
 
 import org.w3c.dom.Text;
+
+import java.util.concurrent.ExecutionException;
 
 public class ProductDetailFragment extends Fragment {
 
@@ -71,6 +75,23 @@ public class ProductDetailFragment extends Fragment {
         increase.setOnClickListener(view -> setAmount(1));
         decrease.setOnClickListener(view -> setAmount(-1));
 
+        Button cartingBtn = rootView.findViewById(R.id.cartingButtonID);
+        cartingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TransactionSingleton transactionSingleton = TransactionSingleton.getInstance();
+                try {
+                    ProductElement productElement = viewModel.getProductElement_ID_WithoutLiveData(productId);
+                    transactionSingleton.addProductElementArrayList(productElement,numOfProducts);
+                    Log.d("QuocTransaction", "onClick: Transaction Successfully "+productElement.getNameProduct() + " "+ String.valueOf(transactionSingleton.getNumberProduct_Id(productId)));
+                    getActivity().onBackPressed();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         return rootView;
     }
 
