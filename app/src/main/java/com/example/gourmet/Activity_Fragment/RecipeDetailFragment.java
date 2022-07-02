@@ -23,6 +23,16 @@ public class RecipeDetailFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.recipe_detail_fragment,container,false);
+        View ActionBarFragment = rootView.findViewById(R.id.actionBar_homefrag_id);
+        TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
+
+        namefragment.setText("Công thức nấu ăn");
+        ActionBarFragment.findViewById(R.id.cart_icon_id).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(RecipeDetailFragment.this).navigate(R.id.action_recipeDetailFragment_to_cartFragment);
+            }
+        });
 
         TextView nameRecipeTextView = rootView.findViewById(R.id.nameRecipeID);
         nameRecipeTextView.setText(getArguments().getString("Recipe_Name_String"));
