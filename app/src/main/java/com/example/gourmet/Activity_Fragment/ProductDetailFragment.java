@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
 import com.example.gourmet.DataElement.ProductElement;
 import com.example.gourmet.DataElement.TransactionSingleton;
 import com.example.gourmet.R;
@@ -61,7 +62,10 @@ public class ProductDetailFragment extends Fragment {
         viewModel.getProductById(productId).observe(getViewLifecycleOwner(), new Observer<ProductElement>() {
             @Override
             public void onChanged(ProductElement productElement) {
-                image.setImageResource(R.drawable.raucu);
+                Glide.with(ProductDetailFragment.this)
+                        .load(productElement.getImageUrl())
+                        .centerCrop()
+                        .into(image);
                 name.setText(productElement.getNameProduct());
                 price.setText(String.format("%d/%s", (int)productElement.getPrice(), productElement.getDataUnit()));
                 description.setText(productElement.getProductDescription());
