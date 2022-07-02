@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -21,19 +22,18 @@
         android:padding="12dp"
         android:text="@string/tim_kiem"
         android:textColor="#AEAEAE" />
-    <GridView
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/product_list_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="16dp"
-        android:numColumns="auto_fit"
-        android:stretchMode="columnWidth"
-        android:columnWidth="200dp"
-        android:gravity="center"
-        android:horizontalSpacing="5dp"
-        android:verticalSpacing="5dp"
-        tools:listitem="@layout/product_element"
+        android:layout_above="@+id/navigationbarID_productlistfrag"
         android:layout_below="@+id/findingBarID_productlistfrag"
-        android:layout_above="@+id/navigationbarID_productlistfrag" />
+        android:layout_marginHorizontal="16dp"
+        android:columnWidth="60dp"
+        android:gravity="center"
+        android:stretchMode="columnWidth"
+    />
 
     <fragment
         android:id="@+id/navigationbarID_productlistfrag"

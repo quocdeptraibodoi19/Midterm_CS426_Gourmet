@@ -8,6 +8,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Objects;
+
 @Entity(tableName = "ProductTable")
 public class ProductElement {
     @PrimaryKey
@@ -112,5 +114,18 @@ public class ProductElement {
 
     public void setDataUnit(@NonNull String dataUnit) {
         DataUnit = dataUnit;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductElement that = (ProductElement) o;
+        return ProductID == that.ProductID && Float.compare(that.Price, Price) == 0 && NameProduct.equals(that.NameProduct) && ImageUrl.equals(that.ImageUrl) && Objects.equals(ProductDescription, that.ProductDescription) && Category.equals(that.Category) && DataUnit.equals(that.DataUnit);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ProductID, NameProduct, ImageUrl, Price, ProductDescription, Category, DataUnit);
     }
 }
