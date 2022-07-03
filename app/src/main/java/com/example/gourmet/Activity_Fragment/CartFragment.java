@@ -87,12 +87,7 @@ public class CartFragment extends Fragment {
         });
 
         namefragment.setText("Giỏ hàng");
-        ActionBarFragment.findViewById(R.id.cart_icon_id).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(CartFragment.this).navigate(R.id.action_mapsFragment_to_cartFragment);
-            }
-        });
+        ActionBarFragment.findViewById(R.id.cart_icon_id).setVisibility(View.INVISIBLE);
 
         transactionSingleton = TransactionSingleton.getInstance();
         TransactionViewModel transactionViewModel = new ViewModelProvider(this).get(TransactionViewModel.class);
