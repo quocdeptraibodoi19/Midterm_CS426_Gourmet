@@ -82,6 +82,7 @@ public class ProductDetailFragment extends Fragment {
             public void onChanged(ProductElement productElement) {
                 Glide.with(ProductDetailFragment.this)
                         .load(productElement.getImageUrl())
+                        .placeholder(R.drawable.placeholder)
                         .centerCrop()
                         .into(image);
                 name.setText(productElement.getNameProduct());

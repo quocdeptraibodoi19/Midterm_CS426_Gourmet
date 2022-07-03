@@ -43,6 +43,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     public void onBindViewHolder(@NonNull ProductListAdapter.ProductViewHolder holder, int position) {
         ProductElement product = products.get(position);
         Glide.with(context).load(product.getImageUrl())
+                .placeholder(R.drawable.placeholder)
                 .centerCrop()
                 .into(holder.avatar);
         holder.name.setText(product.getNameProduct());
