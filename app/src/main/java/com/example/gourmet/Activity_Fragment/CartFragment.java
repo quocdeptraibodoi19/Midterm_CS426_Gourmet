@@ -34,11 +34,44 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
+//Todo: save data from the configuration change - Quoc
+// (Note that when backstack, fragment is not dead -> data from editview is remained but (in this case oncreaveview is still re-invoked)
+// The configuration changes occurs will lead to the death of the old fragment and the birth of the new fragment
+// -> data is not remained but the oncreateview method still runs -> may get you confused with the previous case
 public class CartFragment extends Fragment {
     TransactionSingleton transactionSingleton;
+    private final static String username_code = "com.example.gourmet.Activity_Fragment.ProductListFragment_name";
+    private final static String useradd_code = "com.example.gourmet.Activity_Fragment.ProductListFragment_address";
+    private final static String userphone_code = "com.example.gourmet.Activity_Fragment.ProductListFragment_phone";
+    private final static String userstore_code = "com.example.gourmet.Activity_Fragment.ProductListFragment_store";
+    private EditText addressedit, phoneedit, nameedit;
+    private RadioButton storebtn1,storebtn2,storebtn3;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(savedInstanceState != null){
+            addressedit.setText(savedInstanceState.getString(useradd_code));
+            phoneedit.setText(savedInstanceState.getString(userphone_code));
+            nameedit.setText(savedInstanceState.getString(username_code));
+            switch (savedInstanceState.getInt(userstore_code)){
+                case 1:
+                    storebtn1.setChecked(true);
+                    break;
+                case 2:
+                    storebtn2.setChecked(true);
+                    break;
+                case 3:
+                    storebtn3.setChecked(true);
+                    break;
+            }
+        }
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        Log.d("Nhi", "onCreateView: cart onbakaview");
         View rootView = inflater.inflate(R.layout.cart_fragment,container,false);
         transactionSingleton = TransactionSingleton.getInstance();
         TransactionViewModel transactionViewModel = new ViewModelProvider(this).get(TransactionViewModel.class);
@@ -70,7 +103,6 @@ public class CartFragment extends Fragment {
                 NavHostFragment.findNavController(CartFragment.this).navigate(R.id.action_cartFragment_to_homeFragment);
             }
         });
-        EditText addressedit, phoneedit, nameedit;
         addressedit = rootView.findViewById(R.id.DiaChiEditID);
         phoneedit = rootView.findViewById(R.id.SoDienThoaiEditID);
         nameedit = rootView.findViewById(R.id.HoVaTenEditID);
@@ -78,7 +110,7 @@ public class CartFragment extends Fragment {
         phoneedit.setHint(transactionSingleton.getPhoneNumber());
         nameedit.setHint(transactionSingleton.getNameUser());
 
-        RadioButton storebtn1,storebtn2,storebtn3;
+
         storebtn1 = ((RadioButton)rootView.findViewById(R.id.store1optionid));
         storebtn2 = ((RadioButton)rootView.findViewById(R.id.store2optionid));
         storebtn3 = ((RadioButton)rootView.findViewById(R.id.store3optionid));
@@ -127,5 +159,19 @@ public class CartFragment extends Fragment {
             }
         });
         return rootView;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if(storebtn1.isChecked())
+            outState.putInt(userstore_code,1);
+        else if(storebtn2.isChecked())
+            outState.putInt(userstore_code,2);
+        else if(storebtn3.isChecked())
+            outState.putInt(userstore_code,3);
+        outState.putString(username_code,nameedit.getText().toString());
+        outState.putString(useradd_code,addressedit.getText().toString());
+        outState.putString(userphone_code,phoneedit.getText().toString());
     }
 }

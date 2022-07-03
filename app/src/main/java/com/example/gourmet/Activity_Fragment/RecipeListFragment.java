@@ -1,6 +1,7 @@
 package com.example.gourmet.Activity_Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +19,20 @@ import com.example.gourmet.Network.RecipeInflater;
 import com.example.gourmet.R;
 
 import java.lang.ref.WeakReference;
+import java.util.Objects;
 
 public class RecipeListFragment extends Fragment {
+    private final static String find_code = "com.example.gourmet.Activity_Fragment.RecipeListFragment";
+    private ExtendedEditView extendedEditView;
+    private boolean isPopuldated = false;
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null){
+            extendedEditView.setText(find_code);
+        }
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -46,7 +59,8 @@ public class RecipeListFragment extends Fragment {
         fragment.findViewById(R.id.shopIconId).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(RecipeListFragment.this).navigate(R.id.action_recipeListFragment_to_mapsFragment);
+                NavHostFragment.findNavController(RecipeListFragment.this)
+                        .navigate(R.id.action_recipeListFragment_to_mapsFragment);
             }
         });
         fragment.findViewById(R.id.transactionIconId).setOnClickListener(new View.OnClickListener() {
@@ -59,9 +73,20 @@ public class RecipeListFragment extends Fragment {
         progressBar.setVisibility(View.GONE);
         RecipeAdapter recipeAdapter = new RecipeAdapter(getContext(),RecipeListFragment.this, R.layout.recipecell_layout,null);
         RecipeInflater recipeInflater = new RecipeInflater(rootView.findViewById(R.id.recipe_list_gridview_id),progressBar);
-        ExtendedEditView extendedEditView = rootView.findViewById(R.id.findingBarID_recipelistfrag);
-        extendedEditView.search(recipeInflater,recipeAdapter,new WeakReference<ProgressBar>(progressBar));
+        Log.d("BAKA", "onCreateView: "+String.valueOf(isPopuldated));
+
+        extendedEditView = rootView.findViewById(R.id.findingBarID_recipelistfrag);
+        extendedEditView.search(recipeInflater,recipeAdapter,new WeakReference<ProgressBar>(progressBar),isPopuldated);
+        // To prevent it from re-runnning when we back_stack
+        if(extendedEditView != null)
+            isPopuldated = true;
 
         return rootView;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(find_code, Objects.requireNonNull(extendedEditView.getText()).toString());
     }
 }

@@ -31,11 +31,18 @@ import java.util.List;
 import java.util.Objects;
 
 public class ProductListFragment extends Fragment {
-
+    private final static String find_code = "com.example.gourmet.Activity_Fragment.ProductListFragment";
     private RecyclerView recyclerView;
     private ProductListAdapter adapter;
     private ProductViewModel viewModel;
     private ExtendedEditView editView;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(savedInstanceState != null)
+            editView.setText(savedInstanceState.getString(find_code));
+    }
 
     @Nullable
     @Override
@@ -107,5 +114,11 @@ public class ProductListFragment extends Fragment {
             }
         });
         return rootView;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(find_code,editView.getText().toString());
     }
 }
