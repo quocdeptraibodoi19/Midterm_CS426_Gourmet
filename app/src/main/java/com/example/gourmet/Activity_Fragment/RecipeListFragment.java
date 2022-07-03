@@ -78,14 +78,7 @@ public class RecipeListFragment extends Fragment {
         ProgressBar progressBar = rootView.findViewById(R.id.recipe_list_progress_id);
         progressBar.setVisibility(View.GONE);
         recipeAdapter = new RecipeAdapter(getContext(),RecipeListFragment.this, R.layout.recipecell_layout,null);
-        if(!isPopuldated){
-            gridView = rootView.findViewById(R.id.recipe_list_gridview_id);
-        }
-        if(recipeObjArrayList != null)
-        {
-            recipeAdapter.setRecipeObjArrayList(recipeObjArrayList);
-            gridView.setAdapter(recipeAdapter);
-        }
+        gridView = rootView.findViewById(R.id.recipe_list_gridview_id);
         RecipeInflater recipeInflater = new RecipeInflater(gridView,progressBar);
         Log.d("BAKA", "onCreateView: "+String.valueOf(isPopuldated));
 
@@ -104,9 +97,5 @@ public class RecipeListFragment extends Fragment {
         outState.putString(find_code, Objects.requireNonNull(extendedEditView.getText()).toString());
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        recipeObjArrayList = recipeAdapter.getRecipeObjArrayList();
-    }
+
 }
