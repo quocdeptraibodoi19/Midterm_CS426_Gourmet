@@ -32,4 +32,7 @@ public interface ProductDao {
 
     @Query("Select * from ProductTable where ProductID = :id")
     ProductElement getProductById_WithoutLiveData(int id);
+
+    @Query("Select * from ProductTable where NameProduct like '%'||:name||'%' and  Category=:category")
+    LiveData<List<ProductElement>> getProductByNameCategory(String name,String category);
 }

@@ -75,6 +75,9 @@ public class Repository {
         return productDao.getProductsByCategory(category);
     }
 
+    public LiveData<List<ProductElement>> getProductByNameCategory(String patternName,String category){
+        return productDao.getProductByNameCategory(patternName,category);
+    }
     // StoreDAO
     public LiveData<List<StoreElement>> getStoreList() {
         return storeDao.GetListStoreElement();

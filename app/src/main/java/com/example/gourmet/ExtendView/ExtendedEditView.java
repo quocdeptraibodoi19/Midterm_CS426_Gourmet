@@ -11,12 +11,20 @@ import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
 
+import com.example.gourmet.Activity_Fragment.ProductListFragment;
+import com.example.gourmet.Adapter.ProductListAdapter;
 import com.example.gourmet.Adapter.RecipeAdapter;
+import com.example.gourmet.DataElement.ProductElement;
 import com.example.gourmet.Network.RecipeInflater;
+import com.example.gourmet.ViewModel.ProductViewModel;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.Callable;
 
 public class ExtendedEditView extends androidx.appcompat.widget.AppCompatEditText {
     private long delays;
@@ -58,6 +66,53 @@ public class ExtendedEditView extends androidx.appcompat.widget.AppCompatEditTex
                     handler.postDelayed(input_finish_checker, delays);
                     isPrevPopulated = false;
                 }
+            }
+        });
+    }
+    public void searchRecipe(String category, ProductListFragment productListFragment, ProductViewModel productViewModel, ProductListAdapter productListAdapter,WeakReference<ProgressBar> progressBarWeakReference){
+        delays = 1050;
+        last_text_edit = 0;
+        handler = new Handler();
+        input_finish_checker = new Runnable() {
+            public void run() {
+                if (System.currentTimeMillis() > (last_text_edit + delays - 500)) {
+                    if(!getText().toString().equals(""))
+                    productViewModel.getProductByNameCategory(getText().toString(),category).observe(productListFragment.getViewLifecycleOwner(), new Observer<List<ProductElement>>() {
+                        @Override
+                        public void onChanged(List<ProductElement> productElements) {
+                            progressBarWeakReference.get().setVisibility(GONE);
+                            productListAdapter.setProducts(productElements);
+                        }
+                    });
+                    else{
+                        productViewModel.getProductList(category).observe(productListFragment.getViewLifecycleOwner(), new Observer<List<ProductElement>>() {
+                            @Override
+                            public void onChanged(List<ProductElement> productElements) {
+                                progressBarWeakReference.get().setVisibility(GONE);
+                                productListAdapter.setProducts(productElements);
+                            }
+                        });
+                    }
+                }
+            }
+        };
+        this.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Log.d("hoaitrong", "beforeTextChanged: ");
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                handler.removeCallbacks(input_finish_checker);
+                productListAdapter.setProducts(new ArrayList<>());
+                progressBarWeakReference.get().setVisibility(VISIBLE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                last_text_edit = System.currentTimeMillis();
+                handler.postDelayed(input_finish_checker, delays);
             }
         });
     }

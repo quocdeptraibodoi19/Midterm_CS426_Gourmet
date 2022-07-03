@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ import com.example.gourmet.ExtendView.ExtendedEditView;
 import com.example.gourmet.R;
 import com.example.gourmet.ViewModel.ProductViewModel;
 
+import java.lang.ref.WeakReference;
 import java.nio.BufferUnderflowException;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,8 @@ public class ProductListFragment extends Fragment {
     private ProductListAdapter adapter;
     private ProductViewModel viewModel;
     private ExtendedEditView editView;
-
+    private boolean isHappenBefore = false;
+    private ProgressBar progressBar;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +54,7 @@ public class ProductListFragment extends Fragment {
         View fragment = rootView.findViewById(R.id.navigationbarID_productlistfrag);
         View ActionBarFragment = rootView.findViewById(R.id.actionBar_homefrag_id);
         TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
-
+        progressBar = rootView.findViewById(R.id.productlist_progress_bar);
         String category = getArguments().getString("category", "");
         String name = getArguments().getString("name", "");
 
@@ -63,7 +66,6 @@ public class ProductListFragment extends Fragment {
             }
         });
 
-        editView = rootView.findViewById(R.id.findingBarID_productlistfrag);
         adapter = new ProductListAdapter();
         viewModel =  new ViewModelProvider(this).get(ProductViewModel.class);
 
@@ -82,10 +84,17 @@ public class ProductListFragment extends Fragment {
                 NavHostFragment.findNavController(ProductListFragment.this).navigate(R.id.action_productListFragment_to_productDetailFragment, bundle);
             }
         });
-
-        viewModel.getProductList(category).observe(getViewLifecycleOwner(), productElements -> {
-            adapter.setProducts(productElements);
-        });
+        if(!isHappenBefore){
+            progressBar.setVisibility(View.VISIBLE);
+            viewModel.getProductList(category).observe(getViewLifecycleOwner(), productElements -> {
+                progressBar.setVisibility(View.GONE);
+                adapter.setProducts(productElements);
+            });
+        }
+        editView = rootView.findViewById(R.id.findingBarID_productlistfrag);
+        editView.searchRecipe(category,this,viewModel,adapter, new WeakReference<>(progressBar));
+        if(editView != null)
+            isHappenBefore = true;
 
         fragment.findViewById(R.id.homeIconId).setOnClickListener(new View.OnClickListener() {
             @Override

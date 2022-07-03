@@ -75,7 +75,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:indeterminateTint="#FCFCFC"
-
                 app:layout_constraintBottom_toBottomOf="@+id/recipe_list_gridview_id"
                 app:layout_constraintEnd_toEndOf="@+id/recipe_list_gridview_id"
                 app:layout_constraintStart_toStartOf="@+id/recipe_list_gridview_id"

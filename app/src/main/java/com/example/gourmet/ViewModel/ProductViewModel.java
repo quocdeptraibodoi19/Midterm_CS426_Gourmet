@@ -33,6 +33,10 @@ public class ProductViewModel extends AndroidViewModel {
         return repository.getProduct_ID_Without_Livedata(id);
     }
 
+    public LiveData<List<ProductElement>> getProductByNameCategory(String patternName,String category){
+        return repository.getProductByNameCategory(patternName,category);
+    }
+
     public void insertProductElement(ProductElement productElement){
         repository.InsertProduct(productElement);
     }
