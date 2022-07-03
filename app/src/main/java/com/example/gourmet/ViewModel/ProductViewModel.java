@@ -34,6 +34,9 @@ public class ProductViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<ProductElement>> getProductByNameCategory(String patternName,String category){
+        if(Objects.equals(category, "")){
+            return repository.getProductByNameAll(patternName);
+        }
         return repository.getProductByNameCategory(patternName,category);
     }
 

@@ -35,4 +35,7 @@ public interface ProductDao {
 
     @Query("Select * from ProductTable where NameProduct like '%'||:name||'%' and  Category=:category")
     LiveData<List<ProductElement>> getProductByNameCategory(String name,String category);
+
+    @Query("Select * from ProductTable where NameProduct like '%'||:name||'%'")
+    LiveData<List<ProductElement>> getProductByNameAll(String name);
 }
