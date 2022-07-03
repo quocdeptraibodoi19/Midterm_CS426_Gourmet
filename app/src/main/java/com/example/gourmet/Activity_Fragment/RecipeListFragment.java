@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ public class RecipeListFragment extends Fragment {
     private boolean isPopuldated = false;
     private ArrayList<RecipeObj> recipeObjArrayList;
     private RecipeAdapter recipeAdapter;
+    private GridView gridView;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,13 +78,15 @@ public class RecipeListFragment extends Fragment {
         ProgressBar progressBar = rootView.findViewById(R.id.recipe_list_progress_id);
         progressBar.setVisibility(View.GONE);
         recipeAdapter = new RecipeAdapter(getContext(),RecipeListFragment.this, R.layout.recipecell_layout,null);
+        if(!isPopuldated){
+            gridView = rootView.findViewById(R.id.recipe_list_gridview_id);
+        }
         if(recipeObjArrayList != null)
         {
-            Log.d("Trang", "onCreateView: size of recipob"+ String.valueOf(recipeObjArrayList.size()));
             recipeAdapter.setRecipeObjArrayList(recipeObjArrayList);
-            recipeAdapter.notifyDataSetChanged();
+            gridView.setAdapter(recipeAdapter);
         }
-        RecipeInflater recipeInflater = new RecipeInflater(rootView.findViewById(R.id.recipe_list_gridview_id),progressBar);
+        RecipeInflater recipeInflater = new RecipeInflater(gridView,progressBar);
         Log.d("BAKA", "onCreateView: "+String.valueOf(isPopuldated));
 
         extendedEditView = rootView.findViewById(R.id.findingBarID_recipelistfrag);
@@ -103,7 +107,6 @@ public class RecipeListFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        Log.d("Quoc", "onPause: size: "+ String.valueOf(recipeAdapter.getRecipeObjArrayList().size()));
         recipeObjArrayList = recipeAdapter.getRecipeObjArrayList();
     }
 }

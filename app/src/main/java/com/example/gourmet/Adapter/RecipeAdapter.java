@@ -35,7 +35,9 @@ public class RecipeAdapter extends ArrayAdapter<RecipeObj> {
 
     @Override
     public int getCount() {
+        if(recipeObjArrayList != null)
         return recipeObjArrayList.size();
+        return 0;
     }
 
     public void setRecipeObjArrayList(ArrayList<RecipeObj> recipeObjArrayList){
