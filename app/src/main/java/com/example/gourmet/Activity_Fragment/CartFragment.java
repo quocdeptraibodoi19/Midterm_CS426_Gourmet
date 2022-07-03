@@ -73,6 +73,18 @@ public class CartFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d("Nhi", "onCreateView: cart onbakaview");
         View rootView = inflater.inflate(R.layout.cart_fragment,container,false);
+
+        View ActionBarFragment = rootView.findViewById(R.id.actionBar_homefrag_id);
+        TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
+
+        namefragment.setText("Giỏ hàng");
+        ActionBarFragment.findViewById(R.id.cart_icon_id).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(CartFragment.this).navigate(R.id.action_mapsFragment_to_cartFragment);
+            }
+        });
+
         transactionSingleton = TransactionSingleton.getInstance();
         TransactionViewModel transactionViewModel = new ViewModelProvider(this).get(TransactionViewModel.class);
 

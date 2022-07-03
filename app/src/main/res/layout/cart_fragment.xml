@@ -5,11 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#363636">
 
+    <fragment
+        android:id="@+id/actionBar_homefrag_id"
+        android:layout_width="wrap_content"
+        android:name="com.example.gourmet.Activity_Fragment.ActionBarFragment"
+        tools:layout="@layout/action_bar"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"/>
+
     <ScrollView
         android:id="@+id/transactionbodyID"
-        android:layout_above="@+id/tienbarlayoutID"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tienbarlayoutID"
+        android:layout_below="@+id/actionBar_homefrag_id"
+        android:layout_marginTop="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,9 +31,9 @@
                 android:id="@+id/sanphamtitleID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="@font/roboto"
                 android:text="@string/san_pham_title"
-                android:layout_marginBottom="8dp"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -33,8 +43,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sanphamtitleID"
-                tools:listitem="@layout/sanpham_carted_fragment"
-                android:nestedScrollingEnabled="false" />
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/sanpham_carted_fragment" />
 
             <LinearLayout
                 android:id="@+id/buttonCombineID"
@@ -106,9 +116,9 @@
                 android:layout_marginTop="8dp"
                 android:background="#585858"
                 android:fontFamily="@font/roboto"
+                android:hint="@string/sample_name_edit"
                 android:inputType="text|textNoSuggestions"
                 android:padding="12dp"
-                android:hint="@string/sample_name_edit"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -131,9 +141,9 @@
                 android:layout_marginTop="8dp"
                 android:background="#585858"
                 android:fontFamily="@font/roboto"
+                android:hint="@string/_0869315924"
                 android:inputType="numberDecimal"
                 android:padding="12dp"
-                android:hint="@string/_0869315924"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -156,48 +166,51 @@
                 android:layout_marginTop="8dp"
                 android:background="#585858"
                 android:fontFamily="@font/roboto"
+                android:hint="@string/address_sample"
                 android:inputType="textMultiLine"
                 android:padding="12dp"
-                android:hint="@string/address_sample"
                 android:textColor="#FFFFFF" />
+
             <RadioGroup
                 android:id="@+id/storegroup"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center_horizontal"
-                android:layout_height="wrap_content">
+                android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/store1optionid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Store 1"
                     android:fontFamily="@font/roboto"
+                    android:text="Store 1"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <RadioButton
                     android:id="@+id/store2optionid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Store 2"
                     android:fontFamily="@font/roboto"
+                    android:text="Store 2"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <RadioButton
                     android:id="@+id/store3optionid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Store 3"
                     android:fontFamily="@font/roboto"
+                    android:text="Store 3"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </RadioGroup>
         </LinearLayout>
 

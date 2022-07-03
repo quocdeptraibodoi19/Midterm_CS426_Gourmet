@@ -38,18 +38,18 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/datHangBtnID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="#F4CD2A"
-            android:fontFamily="@font/roboto"
-            android:padding="16dp"
-            android:text="@string/dat_hang"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/datHangBtnID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="#F4CD2A"
+        android:fontFamily="@font/roboto"
+        android:padding="16dp"
+        android:text="@string/dat_hang"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

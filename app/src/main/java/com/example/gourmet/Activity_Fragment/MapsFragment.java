@@ -56,12 +56,6 @@ public class MapsFragment extends Fragment {
         TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
 
         namefragment.setText("Cửa hàng");
-        ActionBarFragment.findViewById(R.id.cart_icon_id).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(MapsFragment.this).navigate(R.id.action_mapsFragment_to_cartFragment);
-            }
-        });
 
         viewModel = new ViewModelProvider(this).get(StoreViewModel.class);
 

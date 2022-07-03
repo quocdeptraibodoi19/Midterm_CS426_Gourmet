@@ -22,9 +22,8 @@
         android:fontFamily="@font/playfair_display"
         android:text="Lasagna"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        />
+        android:textSize="24sp"
+        android:textStyle="bold" />
     <ImageView
         android:id="@+id/cart_icon_id"
         android:layout_width="wrap_content"
