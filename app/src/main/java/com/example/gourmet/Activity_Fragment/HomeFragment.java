@@ -2,11 +2,13 @@ package com.example.gourmet.Activity_Fragment;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -89,6 +91,26 @@ public class HomeFragment extends Fragment {
 
         if(Navfragment != null) Log.d("Quoc", "onCreateView: not null Navfragment");
         if(rootView == null) Log.d("Quoc", "onCreateView: null");
+
         return rootView;
+    }
+    @Override
+    //Pressed return button - returns to the results menu
+    public void onResume() {
+        super.onResume();
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+
+                    getActivity().finish();
+
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

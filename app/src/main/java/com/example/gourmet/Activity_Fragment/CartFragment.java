@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,6 +77,14 @@ public class CartFragment extends Fragment {
 
         View ActionBarFragment = rootView.findViewById(R.id.actionBar_homefrag_id);
         TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
+        ImageView backIncon = ActionBarFragment.findViewById(R.id.back_icon_id);
+        backIncon.setVisibility(View.VISIBLE);
+        backIncon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
 
         namefragment.setText("Giỏ hàng");
         ActionBarFragment.findViewById(R.id.cart_icon_id).setOnClickListener(new View.OnClickListener() {

@@ -16,7 +16,7 @@
         android:fontFamily="@font/playfair_display"
         android:text="Cà chua Đà Lạt"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -33,7 +33,7 @@
         android:fontFamily="@font/roboto"
         android:text="1"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +46,7 @@
         android:fontFamily="@font/roboto"
         android:text="Số lượng:"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/number_id"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +60,7 @@
         android:fontFamily="@font/roboto"
         android:text="25.000 / 500gr"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_product_id" />

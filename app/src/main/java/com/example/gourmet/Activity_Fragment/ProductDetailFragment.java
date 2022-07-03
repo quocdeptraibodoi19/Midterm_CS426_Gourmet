@@ -46,7 +46,14 @@ public class ProductDetailFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.product_detail_fragment,container,false);
         View ActionBarFragment = rootView.findViewById(R.id.actionBar_homefrag_id);
         TextView namefragment = ActionBarFragment.findViewById(R.id.name_fragment_id);
-
+        ImageView backIncon = ActionBarFragment.findViewById(R.id.back_icon_id);
+        backIncon.setVisibility(View.VISIBLE);
+        backIncon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
         namefragment.setText("Thông tin");
         ActionBarFragment.findViewById(R.id.cart_icon_id).setOnClickListener(new View.OnClickListener() {
             @Override
