@@ -50,6 +50,7 @@
             android:textColorHint="#AEAEAE" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
