@@ -42,6 +42,9 @@ public class RecipeAdapter extends ArrayAdapter<RecipeObj> {
         this.recipeObjArrayList = recipeObjArrayList;
         notifyDataSetChanged();
     }
+    public ArrayList<RecipeObj> getRecipeObjArrayList(){
+        return recipeObjArrayList;
+    }
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

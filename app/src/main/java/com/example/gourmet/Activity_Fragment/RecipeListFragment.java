@@ -14,17 +14,21 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.gourmet.Adapter.RecipeAdapter;
+import com.example.gourmet.DataElement.RecipeObj;
 import com.example.gourmet.ExtendView.ExtendedEditView;
 import com.example.gourmet.Network.RecipeInflater;
 import com.example.gourmet.R;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class RecipeListFragment extends Fragment {
     private final static String find_code = "com.example.gourmet.Activity_Fragment.RecipeListFragment";
     private ExtendedEditView extendedEditView;
     private boolean isPopuldated = false;
+    private ArrayList<RecipeObj> recipeObjArrayList;
+    private RecipeAdapter recipeAdapter;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +75,13 @@ public class RecipeListFragment extends Fragment {
         });
         ProgressBar progressBar = rootView.findViewById(R.id.recipe_list_progress_id);
         progressBar.setVisibility(View.GONE);
-        RecipeAdapter recipeAdapter = new RecipeAdapter(getContext(),RecipeListFragment.this, R.layout.recipecell_layout,null);
+        recipeAdapter = new RecipeAdapter(getContext(),RecipeListFragment.this, R.layout.recipecell_layout,null);
+        if(recipeObjArrayList != null)
+        {
+            Log.d("Trang", "onCreateView: size of recipob"+ String.valueOf(recipeObjArrayList.size()));
+            recipeAdapter.setRecipeObjArrayList(recipeObjArrayList);
+            recipeAdapter.notifyDataSetChanged();
+        }
         RecipeInflater recipeInflater = new RecipeInflater(rootView.findViewById(R.id.recipe_list_gridview_id),progressBar);
         Log.d("BAKA", "onCreateView: "+String.valueOf(isPopuldated));
 
@@ -88,5 +98,12 @@ public class RecipeListFragment extends Fragment {
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(find_code, Objects.requireNonNull(extendedEditView.getText()).toString());
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d("Quoc", "onPause: size: "+ String.valueOf(recipeAdapter.getRecipeObjArrayList().size()));
+        recipeObjArrayList = recipeAdapter.getRecipeObjArrayList();
     }
 }

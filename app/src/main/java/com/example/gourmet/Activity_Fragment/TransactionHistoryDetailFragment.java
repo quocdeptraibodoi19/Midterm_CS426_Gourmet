@@ -29,7 +29,6 @@ public class TransactionHistoryDetailFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.transaction_detail_fragment,container,false);
         View actionBarFragment = rootView.findViewById(R.id.action_bar_transactiodetailfrag);
-        actionBarFragment.findViewById(R.id.cart_icon_id).setVisibility(View.GONE);
         actionBarFragment.findViewById(R.id.back_icon_id).setVisibility(View.VISIBLE);
         actionBarFragment.findViewById(R.id.back_icon_id).setOnClickListener(new View.OnClickListener() {
             @Override
