@@ -29,7 +29,8 @@
         android:hint="Tìm kiếm"
         android:inputType="text|textNoSuggestions"
         android:padding="12dp"
-        android:textColor="#AEAEAE" />
+        android:textColor="#AEAEAE"
+        android:textColorHint="#AEAEAE" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/productlist_constraintlayout"

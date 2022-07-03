@@ -62,7 +62,8 @@
                     android:layout_weight="1"
                     android:backgroundTint="#B03737"
                     android:fontFamily="@font/roboto"
-                    android:padding="12dp"
+                    android:letterSpacing="0.01"
+                    android:padding="16dp"
                     android:text="@string/xoa_gio_hang"
                     android:textAllCaps="false"
                     android:textSize="16sp"
@@ -76,7 +77,8 @@
                     android:layout_weight="1"
                     android:backgroundTint="#F4CD2A"
                     android:fontFamily="@font/roboto"
-                    android:padding="12dp"
+                    android:letterSpacing="0.01"
+                    android:padding="16dp"
                     android:text="@string/them_san_pham"
                     android:textAllCaps="false"
                     android:textColor="#000000"
@@ -101,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/DeliveryInformationID"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
                 android:text="@string/ho_va_ten"
                 android:textColor="#FFFFFF"
@@ -119,14 +121,15 @@
                 android:hint="@string/sample_name_edit"
                 android:inputType="text|textNoSuggestions"
                 android:padding="12dp"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AEAEAE" />
 
             <TextView
                 android:id="@+id/SoDientThoaiID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/HoVaTenEditID"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/roboto"
                 android:text="@string/so_dien_thoai"
                 android:textColor="#FFFFFF"
@@ -144,14 +147,15 @@
                 android:hint="@string/_0869315924"
                 android:inputType="numberDecimal"
                 android:padding="12dp"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AEAEAE" />
 
             <TextView
                 android:id="@+id/DiaChiGiaoHangID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/SoDienThoaiEditID"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/roboto"
                 android:text="@string/dia_chi_giao_hang"
                 android:textColor="#FFFFFF"
@@ -169,7 +173,8 @@
                 android:hint="@string/address_sample"
                 android:inputType="textMultiLine"
                 android:padding="12dp"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AEAEAE" />
 
             <RadioGroup
                 android:id="@+id/storegroup"
@@ -261,11 +266,14 @@
             android:layout_alignParentEnd="true"
             android:backgroundTint="#F4CD2A"
             android:fontFamily="@font/roboto"
+            android:letterSpacing="0.01"
             android:padding="16dp"
+            android:paddingStart="48dp"
+            android:paddingEnd="48dp"
             android:text="@string/dat_hang"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:textAllCaps="false"
             android:textColor="#000000"
-            android:textAllCaps="false"/>
+            android:textSize="14sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 </RelativeLayout>
