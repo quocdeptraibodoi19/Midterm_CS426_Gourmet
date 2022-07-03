@@ -15,14 +15,14 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/action_bar_historytransaction"
         android:id="@+id/transactionhistoryrecyclerviewID"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/navigationbarID_transactionhistoryfrag"
-        tools:listitem="@layout/transaction_item_fragment"
-        android:layout_height="wrap_content"/>
+        android:layout_below="@id/action_bar_historytransaction"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/transaction_item_fragment" />
 
     <fragment
         android:id="@+id/navigationbarID_transactionhistoryfrag"

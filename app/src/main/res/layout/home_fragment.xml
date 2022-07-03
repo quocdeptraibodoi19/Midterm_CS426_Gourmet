@@ -8,11 +8,11 @@
 
     <fragment
         android:id="@+id/actionBar_homefrag_id"
-        android:layout_width="wrap_content"
         android:name="com.example.gourmet.Activity_Fragment.ActionBarFragment"
-        tools:layout="@layout/action_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_height="wrap_content"/>
+        tools:layout="@layout/action_bar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/product_list_recyclerview_id"
