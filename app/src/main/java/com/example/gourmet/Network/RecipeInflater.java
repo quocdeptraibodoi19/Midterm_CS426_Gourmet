@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
@@ -34,10 +35,12 @@ import okhttp3.Response;
 
 public class RecipeInflater {
     private final GridView gridView;
-    private WeakReference<ProgressBar> progressBarWeakReference;
-    public RecipeInflater(GridView gridView,ProgressBar progressBar){
+    private final WeakReference<ProgressBar> progressBarWeakReference;
+    private final WeakReference<TextView> notifyWeakReference;
+    public RecipeInflater(GridView gridView, ProgressBar progressBar, TextView notifyTextview){
         this.gridView = gridView;
         progressBarWeakReference = new WeakReference<>(progressBar);
+        notifyWeakReference = new WeakReference<>(notifyTextview);
     }
 
     public void RecipeSearch(String search,RecipeAdapter recipeAdapter){
@@ -45,6 +48,11 @@ public class RecipeInflater {
             @Override
             public void handleMessage(@NonNull Message msg) {
                 super.handleMessage(msg);
+                if(msg.what == 1){
+                    progressBarWeakReference.get().setVisibility(View.GONE);
+                    notifyWeakReference.get().setVisibility(View.VISIBLE);
+                    return;
+                }
                 ArrayList<RecipeObj> recipeObjArrayList = new ArrayList<>();
                 recipeObjArrayList = (ArrayList<RecipeObj>) msg.obj;
                 if(recipeObjArrayList.size() != 0)
@@ -101,6 +109,9 @@ public class RecipeInflater {
                     handler.sendMessage(message);
                 } catch (IOException | JSONException e) {
                     Log.d("Hoai", "run: fail");
+                    Message message = new Message();
+                    message.what = 1;
+                    handler.sendMessage(message);
                     e.printStackTrace();
                 }
             }

@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,7 +33,7 @@ public class ExtendedEditView extends androidx.appcompat.widget.AppCompatEditTex
     private Handler handler;
     private Runnable input_finish_checker;
     private boolean isPrevPopulated;
-    public void search(RecipeInflater inflater, RecipeAdapter recipeAdapter, WeakReference<ProgressBar> progressBarWeakReference,boolean isPopulated){
+    public void search(RecipeInflater inflater, RecipeAdapter recipeAdapter, WeakReference<ProgressBar> progressBarWeakReference, WeakReference<TextView>notifyTextview, boolean isPopulated){
         this.isPrevPopulated = isPopulated;
         delays = 1050;
         last_text_edit = 0;
@@ -56,6 +57,8 @@ public class ExtendedEditView extends androidx.appcompat.widget.AppCompatEditTex
                 handler.removeCallbacks(input_finish_checker);
                 if(!isPrevPopulated)
                     progressBarWeakReference.get().setVisibility(VISIBLE);
+                    notifyTextview.get().setVisibility(GONE);
+                    recipeAdapter.setRecipeObjArrayList(new ArrayList<>());
             }
 
             @Override

@@ -36,6 +36,7 @@ public class TransactionHistoryDetailFragment extends Fragment {
                 getActivity().onBackPressed();
             }
         });
+        actionBarFragment.findViewById(R.id.cart_icon_id).setVisibility(View.INVISIBLE);
         TextView fragmentName = actionBarFragment.findViewById(R.id.name_fragment_id);
         fragmentName.setText("Thông tin đơn hàng");
 

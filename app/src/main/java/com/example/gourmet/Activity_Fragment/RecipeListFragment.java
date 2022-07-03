@@ -29,8 +29,7 @@ public class RecipeListFragment extends Fragment {
     private ExtendedEditView extendedEditView;
     private boolean isPopuldated = false;
     private ArrayList<RecipeObj> recipeObjArrayList;
-    private RecipeAdapter recipeAdapter;
-    private GridView gridView;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,15 +74,16 @@ public class RecipeListFragment extends Fragment {
                 NavHostFragment.findNavController(RecipeListFragment.this).navigate(R.id.action_recipeListFragment_to_transactionHistoryFragment);
             }
         });
+        TextView notifyTextview = rootView.findViewById(R.id.notify_textid);
         ProgressBar progressBar = rootView.findViewById(R.id.recipe_list_progress_id);
         progressBar.setVisibility(View.GONE);
-        recipeAdapter = new RecipeAdapter(getContext(),RecipeListFragment.this, R.layout.recipecell_layout,null);
-        gridView = rootView.findViewById(R.id.recipe_list_gridview_id);
-        RecipeInflater recipeInflater = new RecipeInflater(gridView,progressBar);
+        RecipeAdapter recipeAdapter = new RecipeAdapter(getContext(), RecipeListFragment.this, R.layout.recipecell_layout, null);
+        GridView gridView = rootView.findViewById(R.id.recipe_list_gridview_id);
+        RecipeInflater recipeInflater = new RecipeInflater(gridView,progressBar,notifyTextview);
         Log.d("BAKA", "onCreateView: "+String.valueOf(isPopuldated));
 
         extendedEditView = rootView.findViewById(R.id.findingBarID_recipelistfrag);
-        extendedEditView.search(recipeInflater,recipeAdapter,new WeakReference<ProgressBar>(progressBar),isPopuldated);
+        extendedEditView.search(recipeInflater, recipeAdapter,new WeakReference<ProgressBar>(progressBar),new WeakReference<TextView>(notifyTextview),isPopuldated);
         // To prevent it from re-runnning when we back_stack
         if(extendedEditView != null)
             isPopuldated = true;
